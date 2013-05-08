@@ -29,8 +29,8 @@ public class TryConnection {
 		try {
  
 			connection = DriverManager.getConnection(
-					"jdbc:postgresql://127.0.0.1:5432/testdb", "mkyong",
-					"123456");
+					"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
+					"Phie5pia");
  
 		} catch (SQLException e) {
  
