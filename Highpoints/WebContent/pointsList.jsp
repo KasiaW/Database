@@ -27,8 +27,8 @@ Points list <br><br>
 Class.forName("org.postgresql.Driver"); 
   
 	Connection connection = DriverManager.getConnection(
-			"jdbc:postgresql://localhost:5432/TheHighestPoints", "postgres",
-			"glupiehaslo");
+			"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
+			"Phie5pia");
 	
 	
 	Statement stmt = connection.createStatement();
