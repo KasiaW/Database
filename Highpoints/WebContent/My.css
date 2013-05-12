@@ -1,6 +1,39 @@
 @CHARSET "UTF-8";
 
 
-button.menu {
-	width:100px;
+body {
+	font-family: arial, sans-serif;
+	
+}
+nav {
+	font-weight: bold;
+	text-align: center;
+	width: 10em;
+	background-color:greenyellow;
+
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+
+}
+
+nav ul li {
+	text-align: center;
+	width: 10em;
+	border-top: 2px solid white;
+
+	
+}
+
+nav a{
+	text-decoration: none;
+	color: black;
+}
+
+section {
+	position:absolute;
+	left: 14em;
+	top: 5em;
 }

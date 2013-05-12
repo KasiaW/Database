@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -11,19 +11,23 @@
 </head>
 <body>
 
-<table>
-	
-	<tr><td><a href = 'pointsList.jsp' ><button class="menu">Main Page</button></a></td></tr>
-	<tr></tr>
-	
-	<tr><td><a href = 'profile.jsp'><button class="menu">My profile</button></a></td></tr>
-	<tr><td><a href = 'expedition.jsp'><button class="menu">Expeditions</button></a></td></tr>
-	<tr><td><a href = 'messages.jsp'><button class="menu">Messages</button></a></td></tr>
-	<tr><td><a href = 'settings.jsp'><button class="menu">Settings</button></a></td></tr>
-	
-	
-</table>
-<p id="test"/>
+<h1>Europe's Highpoints</h1>
+
+<nav>
+<ul>
+	<li><a href="pointsList.jsp">Main page</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul>
+	<li><a href="profile.jsp">My profile</a></li>
+	<li><a href="expedition.jsp">My expeditions</a></li>
+	<li><a href="messages.jsp">Messages</a></li>
+	<li><a href="settings.jsp">Settings</a></li>
+</ul>
+</nav>
+
 
 
 
