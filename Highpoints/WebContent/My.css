@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+body {
+	  background-color: #CCCCFF;
+	}
+	
 
 body {
 	font-family: arial, sans-serif;
@@ -9,7 +13,7 @@ nav {
 	font-weight: bold;
 	text-align: center;
 	width: 10em;
-	background-color:greenyellow;
+	background-color:#007BA7;
 
 }
 

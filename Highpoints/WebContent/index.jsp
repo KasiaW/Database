@@ -13,6 +13,7 @@
 
 <h1>Europe's Highpoints</h1>
 
+
 <nav>
 <ul>
 	<li><a href="pointsList.jsp">Main page</a></li>
