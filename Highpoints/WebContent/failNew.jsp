@@ -16,10 +16,7 @@
 <table>
 <tr>
 	<td><%@ include file="index.jsp"%> </td>
-	<td>	
-	<p>Tips</p>
 	
-	</td>
 </tr>
 
 </table>

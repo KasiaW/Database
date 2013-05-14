@@ -48,19 +48,32 @@ public class RegisterServlet extends HttpServlet {
 		
 		Register newUser = new Register(user,password,email,www,date,description); 
 		 
-		if ((((newUser.isValid() && user.length()>=0) && password.length()!=0) && email.length()!=0 )){
-					 
+		if (((((newUser.isValid() && user.length()>=0) && password.length()!=0) && email.length()!=0 )) && (date.length()==0 || date.charAt(4)=='-')){		 
+			
 			HttpSession session = request.getSession(true); 
 			newUser.add();
 					 //session.setAttribute("currentSessionUser",request.getParameter("un")); 
 					 //response.sendRedirect("succ.jsp"); //logged-in page 
 					 
 					 PrintWriter out = response.getWriter();
-						out.print("<html><head> OK REGISTERED </head><body>OK REGISTERED");
-						out.print("</body></html>");
+						out.print("<html><head></head><body><h3>YOU SUCCESFULLY REGISTERED TO OUR PORTAL!</h3>");
+						out.print("Now you can log in to the site in this page </body></html>");
+						out.print("<a href=index.jsp> LOGIN PAGE</a>"); 
+						
 		}
 					
-					 else{ response.sendRedirect("registered.jsp"); //error page 
+					 else{ 
+						    PrintWriter out = response.getWriter();
+							out.print("<html><head></head><body><h4 style=font-family:verdana;color:red;font-size:20px;> " +
+									"Something goes wrong during the registration</h4>");
+							out.print("<h3 style=font-family:verdana;color:red;>" +
+									"Probably the choosen user is already in use or your email is already registered </body></html>");
+							out.print("<h3 style=font-family:verdana;color:red;> Or you haven't filled the compulsory fields"); 
+							out.print("<h3 style=font-family:verdana;color:red;> Or the inserted date is not in the right form"); 
+							out.print("<h3 style=font-family:verdana;color:red;> PLEASE RETRY");  
+						 
+							out.print("<a href=register.jsp> Go to registration page </a></body></html>");
+					
 					 }
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
