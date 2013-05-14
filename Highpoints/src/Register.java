@@ -14,19 +14,24 @@ class Register {
 	String birthday;
 	String description;
 
-	public Register(String user, String pwd, String mail) {
+	public Register(String user, String pwd, String mail,String www, String birthday, String description) {
 		this.user = user;
 		this.pwd = pwd;
 		this.mail = mail;
+		this.www= www;
+		this.birthday = birthday;
+		this.description = description;
 
 	}
 
 	
 	// It checks if the choosen username is available!
-	
-	
+
 	
 	boolean isValid() throws SQLException {
+		boolean result = false;
+		boolean user2 = false;
+		boolean mailb = false;
 
 		Connection connection = DriverManager.getConnection(
 				"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
@@ -34,24 +39,47 @@ class Register {
 
 		Statement stmt = connection.createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT * FROM member WHERE login like '" + user
+				.executeQuery("SELECT * FROM member WHERE login LIKE '" + user
 						+ "'");
 
 		String user1 = "";
+		String mail1 = "";
 
 		while (rs.next()) {
 			user1 = rs.getString("login");
 		}
 
-		if (user1.equals("null")) {
+		if (user1.length() == 0) {
 
-			return true;
+			user2 = true;
 		}
 
 		else {
 
-			return false;
+			user2 = false;
 		}
+
+		rs = stmt.executeQuery("SELECT * FROM member WHERE login like '" + mail
+				+ "'");
+
+		while (rs.next()) {
+			mail1 = rs.getString("mail");
+		}
+
+		if (mail1.length() == 0) {
+
+			mailb = true;
+		}
+
+		else {
+
+			mailb = false;
+		}
+
+		if (mailb && user2) {
+			result = true;
+		}
+		return result;
 	}
 	
 	
@@ -101,12 +129,7 @@ class Register {
 		"VALUES('"+user+"','"+pwd+"','"+mail+"', '"+www+"', '"+description+"')");
 
 	}
-		if (www.length() != 0 && birthday.length()!=0 && description.length()!=0){
-			java.util.Date date =  new SimpleDateFormat("yyyy-MM-dd").parse(birthday);
-			stmt.executeUpdate("INSERT INTO member(login,member_password,mail,www,birthday)" + 
-					"VALUES('"+user+"','"+pwd+"','"+mail+"', '"+www+"', '"+date+"')");
-
-		}
+		
 
 	
 	

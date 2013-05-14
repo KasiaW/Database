@@ -61,7 +61,7 @@ Class.forName("org.postgresql.Driver");
   </table> 
 </section>	
 	
-<%@ include file="index.jsp"%>	
+<%@ include file="index21.jsp"%>	
 
 
 
