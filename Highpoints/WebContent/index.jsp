@@ -67,6 +67,7 @@
 	<tr>   <h3>                                      </h3>          </tr>
 	
 	<TR align="center">
+	<form action="register.jsp">
 				<TD align="center">
 				<input type="submit" name="Submit2" value="REGISTER NOW!" style="width:450px;height:650px">
 				</TD>
@@ -74,6 +75,7 @@
 	<TR align="center">
 				<TD align="center">Register now in order to become a real member of the community!!</TD>
 
+	</form>
 	</TR>
 	
 	</table>
