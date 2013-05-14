@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import java.sql.*;
 
@@ -46,20 +47,27 @@ public class LoginServlet extends HttpServlet {
 		
 			if (user.isValid()){
 				 HttpSession session = request.getSession(true); 
-				 session.setAttribute("currentSessionUser",user); 
+				 
+				 session.setAttribute("currentSessionUser",request.getParameter("un")); 
 				 response.sendRedirect("succ.jsp"); //logged-in page 
 			}
 				
-				 else{ response.sendRedirect("index2.jsp"); //error page } 
+				 else{ response.sendRedirect("index2.jsp"); //error page 
+				 } 
+				 }
 				 
 				 
 				 
 				 
-			 }
-		} catch (SQLException e) {
+			 
+		 catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		/*
+		PrintWriter out = response.getWriter();
+		out.print("<html><head></head><body>" +  request.getParameter("un"));
+		out.print("</body></html>");*/
 		
 	}
 

@@ -8,10 +8,6 @@
 </head>
 <body>
 
-<p>Login succeded</p>
-
-<% out.print(session.getAttribute("currentSessionUser")); %>
-
 <table>
 <tr>
 	<td><%@ include file="index.jsp"%> </td>
