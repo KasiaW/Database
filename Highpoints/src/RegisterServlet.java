@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		Register newUser = new Register(user,password,email,www,date,description); 
 		 
-		if (((((newUser.isValid() && user.length()>=0) && password.length()!=0) && email.length()!=0 )) && (date.length()==0 || date.charAt(4)=='-')){		 
+		if ((((((newUser.isValid() && user.length()>=0) && password.length()!=0) && email.length()!=0 )) && (date.length()==0 || date.charAt(4)=='-'))){		 
 			
 			HttpSession session = request.getSession(true); 
 			newUser.add();

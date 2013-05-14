@@ -16,7 +16,9 @@
 
 <nav>
 <ul>
+	<li>Logged as  <% out.print(session.getAttribute("currentSessionUser")); %>  </li>
 	<li><a href="pointsList.jsp">Main page</a></li>
+
 </ul>
 </nav>
 
