@@ -49,9 +49,11 @@
 	
 	
 	<TR align="center">
+	<form action="index21.jsp">
 				<TD align="center">
 				<input type="submit" name="Submit1" value="LOGIN AS A GUEST" style="width:450px;height:650px">
 				</TD>
+	</form>
 	</TR>
 	
 	<TR align="center">
