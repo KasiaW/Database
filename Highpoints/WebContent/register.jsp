@@ -9,11 +9,11 @@
 <title>Registration page</title>
 </head>
 <body background="prova.jpg" bgcolor="#FFFFFF">
-	<TABLE align="center">
-		<TR>
+	<TABLE align="center", width="450 px">
+		<TR align="left">
 			<h3>Insert the required data in order to register to the site</h3>
 		</TR>
-		<TR>
+		<TR align="Left">
 			<h4>The values (*) are compulsory</h4>
 		</TR>
 

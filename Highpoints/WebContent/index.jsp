@@ -51,7 +51,7 @@
 	<TR align="center">
 	<form action="index21.jsp">
 				<TD align="center">
-				<input type="submit" name="Submit1" value="LOGIN AS A GUEST" style="width:450px;height:650px">
+				<input type="submit" name="Submit1" value="LOGIN AS A GUEST" style="width:450px;height:20px">
 				</TD>
 	</form>
 	</TR>
@@ -71,7 +71,7 @@
 	<TR align="center">
 	<form action="register.jsp">
 				<TD align="center">
-				<input type="submit" name="Submit2" value="REGISTER NOW!" style="width:450px;height:650px">
+				<input type="submit" name="Submit2" value="REGISTER NOW!" style="width:450px;height:20px">
 				</TD>
 	</TR>
 	<TR align="center">
