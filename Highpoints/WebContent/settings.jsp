@@ -112,14 +112,14 @@
 						<tr><td></td>
 						<td>
 							<input type="submit" name="Submit1" value="UPDATE/INSERT NEW VALUES" style="width:350px;height:25px;">
-						</td>>
+						</td>
 						
 						</tr>
 						
 						<tr><td></td>
 						<td>
 							<input type="submit" name="Submit1" value="CHANGE THE PASSWORD" style="width:350px;height:25px;">
-						</td>>
+						</td>
 						
 						</tr>
 				</table>
