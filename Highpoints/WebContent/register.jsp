@@ -9,7 +9,7 @@
 <title>Registration page</title>
 </head>
 <body background="prova.jpg" bgcolor="#FFFFFF">
-	<TABLE align="center", width="450 px">
+	<TABLE align="center", width="450 px" height="25px">
 		<TR align="left">
 			<h3>Insert the required data in order to register to the site</h3>
 		</TR>
@@ -18,48 +18,44 @@
 		</TR>
 
 		<form action="RegisterServlet">
-			<table bgcolor="#FFFFFF" border="1">
+			<table bgcolor="#FFFFFF" border="1" width="450px" height="25px">
 
 
-				<TR>
-					<td>
-						<h5>Username*:</h5>
-					</td>
-					<td><input type="text" name="user"></td>
+				<TR height="25px">
+					<td width="235px"><b>Username*:</b></td>
+					<td width="215px"><input type="text" name="user" ></td>
 				</TR>
 
-				<TR>
-					<td><h5>Password*:</h5></td>
-					<td><input type="password" name="pass"></td>
+				<TR height="25px">
+					<td width="235px"><b>Password*:</b></td>
+					<td width="215px"><input type="password" name="pass"></td>
 				</TR>
 
-				<TR>
-					<TD><h5>Email*:</h5></TD>
-					<TD><input type="text" name="email"></TD>
+				<TR height="25px">
+					<TD width="235px"><b>Email*:</b></TD>
+					<TD width="215px"><input type="text" name="email"></TD>
 				</TR>
 
-				<TR>
-					<TD><h5>www:</TD>
-					</h5>
-					<TD><input type="text" name="www"></TD>
+				<TR height="25px">
+					<TD width="235px"><b>www:</b></TD>
+					<TD width="215px"><input type="text" name="www"></TD>
 				</TR>
 
-				<TR>
-					<TD><h5>Date of birth (YYYY-MM-DD):</h5></TD>
-					<TD><input type="text" name="date"></TD>
+				<TR height="25px">
+					<TD width="235px"><b>Date of birth (YYYY-MM-DD):</b></TD>
+					<TD width="215px"><input type="text" name="date"></TD>
 				</TR>
 
-				<TR>
-					<TD><h5>Description:</h5></TD>
-					<TD><input type="text" name="des"></TD>
+				<TR height="25px">
+					<TD width="235px"><b>Description:</b></TD>
+					<TD width="215px"><input type="text" name="des"></TD>
 				</TR>
 
 			</table>
 
 
 			<TR>
-				<TD><input type="submit" name="Submit1" value="REGISTER!"
-					style="width: 320px; height: 1950px">
+				<TD><input type="submit" name="Submit1" value="REGISTER!"style="width: 450px; height: 25px">
 			</TR>
 			</TD>
 
