@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,15 +10,15 @@
 <title>Registration page</title>
 </head>
 <body background="prova.jpg" bgcolor="#FFFFFF">
-	<TABLE align="center", width="450 px" height="25px">
-		<TR align="left">
-			<h3>Insert the required data in order to register to the site</h3>
-		</TR>
+	<TABLE align="center"  width="450 px" height="25px">
+		<tr align="left">
+			<td><h3>Insert the required data in order to register to the site</h3></td>
+		</tr>
 		<TR align="Left">
-			<h4>The values (*) are compulsory</h4>
+			<td><h4>The values (*) are compulsory</h4></td>
 		</TR>
 
-		<form action="RegisterServlet">
+		<tr><td><form method ="post" action="RegisterServlet">
 			<table bgcolor="#FFFFFF" border="1" width="450px" height="25px">
 
 
@@ -51,15 +52,15 @@
 					<TD width="215px"><input type="text" name="des"></TD>
 				</TR>
 
-			</table>
+			
 
 
 			<TR>
 				<TD><input type="submit" name="Submit1" value="REGISTER!"style="width: 450px; height: 25px">
 			</TR>
-			</TD>
+			
 
-		</form>
+		</table></form></tr></td>
 
 	</TABLE>
 

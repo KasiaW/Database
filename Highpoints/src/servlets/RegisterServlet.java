@@ -1,3 +1,4 @@
+package servlets;
 
 
 import java.io.IOException;
@@ -31,7 +32,11 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 try {
+		 
+		PrintWriter writer = response.getWriter();
+		writer.println("test");
+		writer.close();
+		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
@@ -80,6 +85,10 @@ public class RegisterServlet extends HttpServlet {
 				e.printStackTrace();} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}finally{
+				writer = response.getWriter();
+				writer.println("test");
+				writer.close();
 			}
 			
 			} 
