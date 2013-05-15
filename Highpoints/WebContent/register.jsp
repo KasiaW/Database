@@ -18,7 +18,7 @@
 			<td><h4>The values (*) are compulsory</h4></td>
 		</TR>
 
-		<tr><td><form method ="post" action="RegisterServlet">
+		<tr><td><form action="RegisterServlet">
 			<table bgcolor="#FFFFFF" border="1" width="450px" height="25px">
 
 

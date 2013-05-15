@@ -33,9 +33,10 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
-		PrintWriter writer = response.getWriter();
+		/*PrintWriter writer = response.getWriter();
 		writer.println("test");
-		writer.close();
+		writer.close();*/
+		
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e1) {
@@ -57,8 +58,6 @@ public class RegisterServlet extends HttpServlet {
 			
 			HttpSession session = request.getSession(true); 
 			newUser.add();
-					 //session.setAttribute("currentSessionUser",request.getParameter("un")); 
-					 //response.sendRedirect("succ.jsp"); //logged-in page 
 					 
 					 PrintWriter out = response.getWriter();
 						out.print("<html><head></head><body><h3>YOU SUCCESFULLY REGISTERED TO OUR PORTAL!</h3>");
@@ -68,6 +67,8 @@ public class RegisterServlet extends HttpServlet {
 		}
 					
 					 else{ 
+						 
+						 
 						    PrintWriter out = response.getWriter();
 							out.print("<html><head></head><body><h4 style=font-family:verdana;color:red;font-size:20px;> " +
 									"Something goes wrong during the registration</h4>");
@@ -85,10 +86,7 @@ public class RegisterServlet extends HttpServlet {
 				e.printStackTrace();} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}finally{
-				writer = response.getWriter();
-				writer.println("test");
-				writer.close();
+			
 			}
 			
 			} 
