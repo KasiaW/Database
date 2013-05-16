@@ -118,9 +118,12 @@
 						</tr>
 						
 						<tr><td></td>
+						<form action="changePassword.jsp">
 						<td>
 							<input type="submit" name="Submit2" value="CHANGE THE PASSWORD" style="width:350px;height:25px;">
 						</td>
+						
+						</form>
 						
 						</tr>
 				</table>

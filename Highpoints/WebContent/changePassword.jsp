@@ -30,6 +30,7 @@
 					</tr>
 				
 					<tr>
+					<form action="PasswordServlet">
 						<table border="1">
 							<tr>
 								<td> <b>Inser your current password:</b></td>
@@ -54,11 +55,14 @@
 									<input type="password" name="new1">
 								</td></tr>
 							<tr>
+							
 							<table>
 							
 						
 							<input type="submit"  value="CHANGE YOUR PASSWORD" style="width:360px;height:170px"> 
+							
 							</tr>
+							<form action="PasswordServlet">
 							</table>
 
 	
