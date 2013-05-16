@@ -91,7 +91,7 @@ class Register {
 				"Phie5pia");
 		
 
-		System.out.println(birthday.length() + www.length() + description.length());
+	
 		
 		Statement stmt = connection.createStatement();
 		if (www.length() != 0 && birthday.length() != 0 && description.length() != 0){

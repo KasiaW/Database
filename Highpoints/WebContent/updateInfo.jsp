@@ -8,7 +8,7 @@
 <title>Settings</title>
 </head>
 <body>
-	<TABLE cellspacing="50", width="500px">
+	<TABLE cellspacing="30">
 		<TR>
 			<td><%@ include file="index21.jsp"%></td>
 			<td>

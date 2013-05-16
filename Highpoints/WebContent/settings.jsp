@@ -8,7 +8,7 @@
 <title>Settings</title>
 </head>
 <body>
-	<TABLE>
+	<TABLE cellspacing="40">
 		<TR>
 			<td><%@ include file="index21.jsp"%></td>
 			<td>
@@ -110,15 +110,16 @@
 						
 						</table>
 						<tr><td></td>
+						<form action="updateInfo.jsp">
 						<td>
 							<input type="submit" name="Submit1" value="UPDATE/INSERT NEW VALUES" style="width:350px;height:25px;">
 						</td>
-						
+						</form>
 						</tr>
 						
 						<tr><td></td>
 						<td>
-							<input type="submit" name="Submit1" value="CHANGE THE PASSWORD" style="width:350px;height:25px;">
+							<input type="submit" name="Submit2" value="CHANGE THE PASSWORD" style="width:350px;height:25px;">
 						</td>
 						
 						</tr>
