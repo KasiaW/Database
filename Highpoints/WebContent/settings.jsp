@@ -101,7 +101,7 @@
 												+ user + "'");
 										String description = "";
 										while (rs.next()) {
-											birthday = rs.getString("description");
+											description = rs.getString("description");
 										}
 										out.println(description);
 									%>

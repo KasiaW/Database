@@ -27,6 +27,7 @@
 						<td><b>UPDATE/INSERT INFORMATION ABOUT YOU</b></td>
 					</tr>
 					<tr>
+						<form action="UpdateInfoServlet">
 						<table border="1">
 							<tr>
 								<td> <b>Username</b></td>
@@ -106,7 +107,7 @@
 												+ user + "'");
 										String description = "";
 										while (rs.next()) {
-											birthday = rs.getString("description");
+											description = rs.getString("description");
 										}
 										out.println(description);
 									%>>
@@ -116,12 +117,13 @@
 						</table>
 						<tr><td></td>
 						<td>
-							<input type="submit" name="Submit1" value="SAVE CHANGES" style="width:350px;height:650px;">
+							<input type="submit" name="Submit1" value="SAVE CHANGES" style="width:350px;height:50px;">
 						</td>
 						
 						</tr>
 						
 				</table>
+				</form>
 		</tr>
 
 
