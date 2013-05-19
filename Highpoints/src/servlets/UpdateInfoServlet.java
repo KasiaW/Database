@@ -46,25 +46,14 @@ public class UpdateInfoServlet extends HttpServlet {
 		 String userName = (session.getAttribute("currentSessionUser")).toString();
 		 String mail = request.getParameter("mail1");
 		 String www = request.getParameter("www1");
-		 
-		 if (www.length() == 0)
-			{
-				www = null;
-			}		
+		
 			
 		 String date = request.getParameter("bd1");
 		 
-		 if (date.length() == 0)
-			{
-				date = null;
-			}		
-			
+	
 		 String description = request.getParameter("de");
 		 
-		 if (description.length() == 0)
-			{
-				description = null;
-			}		
+	
 		
 		 
 		  UpdateInfo info = new UpdateInfo(userName,mail,www,date,description); 
@@ -76,6 +65,7 @@ public class UpdateInfoServlet extends HttpServlet {
 			
 			out.print("<html><head></head><body><h4 style=font-family:verdana;color:red;font-size:20px;> " +
 					"INFORMATION CORRECTLY CHANGED!!!</h4>");  
+			out.print("<a href=pointsList.jsp> Go to the home!</a>");
 			
 					
 	

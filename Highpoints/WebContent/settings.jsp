@@ -107,9 +107,14 @@
 									%>
 								</td>
 							</tr>
-						
 						</table>
-						<tr><td></td>
+						<table>
+						<tr>
+						<td>
+						<h1>      </h1>
+						</tr>
+					
+						<tr>
 						<form action="updateInfo.jsp">
 						<td>
 							<input type="submit" name="Submit1" value="UPDATE/INSERT NEW VALUES" style="width:350px;height:25px;">
@@ -117,7 +122,7 @@
 						</form>
 						</tr>
 						
-						<tr><td></td>
+						<tr>
 						<form action="changePassword.jsp">
 						<td>
 							<input type="submit" name="Submit2" value="CHANGE THE PASSWORD" style="width:350px;height:25px;">
@@ -126,6 +131,18 @@
 						</form>
 						
 						</tr>
+						
+						<tr>
+						<form action="delete.jsp">
+						<td>
+							<input type="submit" name="Submit3" value="DELETE YOUR ACCOUNT" style="width:350px;height:25px;">
+						</td>
+						</form>
+						</tr>
+						
+						
+						</table>
+						
 				</table>
 		</tr>
 
