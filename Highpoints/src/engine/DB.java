@@ -102,12 +102,38 @@ public class DB {
 		    	    	//p.setElevation(rs.getDouble("elevation"));
 
 		  	    }
+		rs.close();
+		stmt.close();
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return p;
+	}
+	
+	public List<String> getLocation(int pointId){
+		List <String> l =new LinkedList<String>();
+		Statement stmt;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT DISTINCT state.state_name "+
+		    		"FROM public.proper_point, public.alternative_point, public.state " +
+		    		"WHERE (proper_point.p_state_id = state.state_id AND proper_point.p_point_id = "+pointId+") OR "+
+		    		"(alternative_point.a_point_id = "+pointId+" AND alternative_point.a_state_id = state.state_id);");
+
+		   
+		   while ( rs.next() ) {
+			    l.add(rs.getString("state_name"));
+		   	
+		  	    }
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return l;
 	}
 
 
