@@ -33,6 +33,18 @@
 </ul>
 </nav>
 
+<%String id = request.getParameter("point_id");
+ if (id!= null){%>
+ <nav>
+<ul>
+	<li><a href="point.jsp?point_id=<%=id%>&">Overview</a></li>
+	<li><a href="tips.jsp?point_id=<%=id%>&">Tips</a></li>
+	<li><a href="reports.jsp?point_id=<%=id%>&">Reports</a></li>
+	<li><a href="society.jsp?point_id=<%=id%>&">Society</a></li>
+</ul>
+</nav>
+ <%} %>
+
 
 
 
