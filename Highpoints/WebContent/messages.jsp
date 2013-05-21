@@ -126,9 +126,10 @@
 										%>
 									</td>
 									<td>
+										<a href="showMessage2.jsp?title=<%out.print(title1);%>&">
 										<%
 											out.print(title1);
-										%>
+										%></a>
 									</td>
 								</tr>
 

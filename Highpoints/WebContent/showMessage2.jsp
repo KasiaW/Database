@@ -29,7 +29,7 @@
 					<table border="1">
 					
 					<tr>
-						<td ><b>Sender</b></td>
+						<td ><b>Addressee</b></td>
 					
 					<td>
 								<% 		Class.forName("org.postgresql.Driver");
@@ -40,24 +40,24 @@
 
 										String user = (session.getAttribute("currentSessionUser"))
 												.toString();
-										String sender = "";
+										String addressee = "";
 										String date = "";
 										String title = "";
 										String message = "";
 										Statement stmt = connection.createStatement();
 
 										ResultSet rs = stmt.executeQuery("SELECT * FROM private_messagge where msg_title ='"
-														+ request.getParameter("title") + "' AND sender='"+user+"';");
+														+ request.getParameter("title") + "'AND addressee='"+user+"';");
 
 										while (rs.next()) {
 										
-											sender = rs.getString("sender");
+											addressee = rs.getString("addressee");
 											date = rs.getString("msg_date");
 											title = rs.getString("msg_title");
 											message = rs.getString("msg_content");
 											
 											
-											out.print(sender); } %>
+											out.print(addressee); } %>
 											
 											
 											
