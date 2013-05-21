@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "domain.Point" %>
 <%@ page import = "engine.Core" %>
+<%@ page import="java.util.List"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -20,7 +21,11 @@
 <table>
 	<tr>
 		<td>Location:</td>
-		<td></td>
+		<td><%List<String> l = Core.getDB().getLocation(a);
+			for (String loc: l){%>
+			<%=loc%>
+			<%} %>
+		</td>
 	</tr>
 	<tr>
 		<td>Elevation:</td>
