@@ -6,11 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Settings</title>
+<%
+ String a = request.getParameter("addressee");
+ if (a == null)a="";
+
+%>
 </head>
 <body>
+<section>
 	<TABLE cellspacing="40">
 		<TR>
-			<td><%@ include file="menu.jsp"%></td>
+			
 			<td>
 				<table>
 					<tr>
@@ -27,7 +33,7 @@
 						
 							<tr>
 								<td><b>To</b></td>
-								<td><input type="text" name="addressee" size="55"></td>
+								<td><input type="text" name="addressee" size="55" value="<%=a%>"></td>
 								
 							</tr>
 							
@@ -51,5 +57,11 @@
 
 
 					</table>
+</table>
+</td>
+</TR>
+</TABLE>
+</section>
+<%@ include file="menu.jsp"%>
 </body>
 </html>

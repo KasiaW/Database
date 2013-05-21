@@ -48,12 +48,16 @@
 <p>Members who want to go to <%=p.getName() %></p>
 <table border=1>
 <tr><td>LOGIN</td>
-	<td></td>
+	<td>READINESS</td>
+	<td>NOTES</td>
+	<td>SEND THE MSG</td>
 </tr>
 <% List <Plan> l3 = Core.getDB().getPlan("plan.plan_point="+a);
    for (Plan pl: l3){%>
    <tr><td><a href="profile.jsp?user_login=<%=pl.getLogin()%>&" ><%=pl.getLogin()%></a></td>
-   	   
+   	   <td><%=pl.getReadiness() %></td>
+   	   <td><%=pl.getDescription() %></td>
+   	   <td><a href="newMessage.jsp?addressee=<%=pl.getLogin()%>&" ><button>MSG</button></a></td>
    </tr>
    <%} %>
 </table>
