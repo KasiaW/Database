@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "domain.Point" %>
-<%@ page import = "domain.Expedition" %>
+<%@ page import = "domain.Expedition"%>
+<%@ page import = "domain.Plan"%>
 <%@ page import = "engine.Core" %>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html>
@@ -40,6 +41,19 @@
    for (Expedition e: l2){%>
    <tr><td><a href="profile.jsp?user_login=<%=e.getLogin()%>&" ><%=e.getLogin()%></a></td>
    	   <td><%=e.getStart() %> - <%=e.getEnd() %></td>	
+   </tr>
+   <%} %>
+</table>
+
+<p>Members who want to go to <%=p.getName() %></p>
+<table border=1>
+<tr><td>LOGIN</td>
+	<td></td>
+</tr>
+<% List <Plan> l3 = Core.getDB().getPlan("plan.plan_point="+a);
+   for (Plan pl: l3){%>
+   <tr><td><a href="profile.jsp?user_login=<%=pl.getLogin()%>&" ><%=pl.getLogin()%></a></td>
+   	   
    </tr>
    <%} %>
 </table>

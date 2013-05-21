@@ -81,7 +81,7 @@ public class DB {
 	public Point getPoint(int id){
 		Statement stmt;
 		Point p = new Point(id,"mum");
-		String a ="a";
+		
 		try {
 			stmt = connection.createStatement();
 		    ResultSet rs = stmt.executeQuery("SELECT *" +
@@ -157,6 +157,39 @@ public class DB {
 			    			  rs.getInt("exped_id"), rs.getDate("exped_start"), rs.getDate("exped_end"),
 			    			  rs.getBoolean("exped_result"), rs.getString("exped_login"), rs.getInt("exped_aim")); 	
 			    	  l.add(e);
+		  	    }
+		   rs.close();
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return l;
+	}
+	
+	public List<Plan> getPlan(String attr){
+		List<Plan> l = new LinkedList<Plan>();
+		
+		Statement stmt;
+		String where = "";
+		if (attr != null)where = "WHERE "+attr;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT * "+
+			"FROM public.plan "+
+            where+";"); 
+ 
+
+		   
+		   while ( rs.next() ) {
+			    	  Plan p = new Plan(
+			    			  rs.getInt("plan_id"), rs.getString("plan_login"), rs.getInt("plan_point"));
+			    	  String x;
+			    	  if ((x = rs.getString("readiness"))!= null) p.setReadiness(x);
+			    	  if ((x = rs.getString("plan_desc"))!= null) p.setDescription(x);
+			    	  l.add(p);
 		  	    }
 		   rs.close();
 		   stmt.close(); 
