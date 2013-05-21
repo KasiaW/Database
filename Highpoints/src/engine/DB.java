@@ -48,16 +48,21 @@ public class DB {
 		    while ( rs.next() ) {
 		    	    	State s = new State(Integer.parseInt(rs.getString("state_id")),rs.getString("state_name"));
 		    	    	s.setPropPoint(Integer.parseInt(rs.getString("point_id")));
+		    	    	//s.getAlterPoint().add(2);
 		    	    	states.put(s.getId(),s);
 
 		    	    }
-
+		    rs.close();
+			stmt.close();
+		    
+		    
 		    stmt = connection.createStatement();
-			rs = stmt.executeQuery("SELECT state.state_id,  point.point_id" +
+			rs = stmt.executeQuery("SELECT *" +
 				    		" FROM public.alternative_point;");
 
 			while (rs.next()){
-				states.get(Integer.parseInt(rs.getString("state_id"))).getAlterPoint().add(Integer.parseInt(rs.getString("point_id")));
+				State s = states.get(rs.getInt("a_state_id"));
+				if (s!=null)s.getAlterPoint().add(rs.getInt("a_point_id"));
 			}
 			
 			rs.close();

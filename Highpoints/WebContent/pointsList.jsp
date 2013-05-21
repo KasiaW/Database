@@ -5,7 +5,9 @@
 <%@ page import = "engine.Core" %>
   <%@ page import = "domain.State" %>
 <%@ page import = "domain.Point" %>
- <%@ page import="java.util.List"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.LinkedList"%>
+ 
 <!DOCTYPE html >
 <html>
 <head>
@@ -33,15 +35,19 @@ Points list <br><br>
    <%List<State> states = Core.getDB().getStatesList();
   for (State s: states){
 	 Point p = Core.getDB().getPoint(s.getPropPoint());
+	 List <Integer> alt = s.getAlterPoint();	 
+	 
   %>
   <tr><td><%=s.getName()%></td>
-  <td><%=s.getPropPoint()%></td>
   
   <td><a href="point.jsp?point_id=<%=p.getId()%>&" ><%=p.getName()%></a></td>
- 
- 
-  		
-  
+  <td>
+  <%for (int a :alt) {
+  	Point aP = Core.getDB().getPoint(a);
+  %>
+	<a href="point.jsp?point_id=<%=aP.getId()%>&" ><%=aP.getName()%></a>
+	<%} %>
+  </td>
   </tr> 
   
   <%} %> 
