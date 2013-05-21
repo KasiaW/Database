@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@ page import="java.sql.*" %>
+ <%@ page import = "engine.DB" %>
+  <%@ page import = "domain.State" %>
+ <%@ page import="java.util.List"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -59,6 +62,12 @@ Class.forName("org.postgresql.Driver");
   
   
   </table> 
+  <%List<State> states = new DB().getStatesList();
+  for (State s: states){
+  %>
+  <p><%=s.getName() %></p>
+  
+  <%} %>
 </section>	
 	
 <%@ include file="index21.jsp"%>	
