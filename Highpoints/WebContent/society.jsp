@@ -25,7 +25,7 @@
 </tr>
 <% List <Expedition> l = Core.getDB().getExped("expedition.exped_aim="+a+"AND expedition.exped_result=true");
    for (Expedition e: l){%>
-   <tr><td><%=e.getLogin() %></td>
+   <tr><td><a href="profile.jsp?user_login=<%=e.getLogin()%>&" ><%=e.getLogin()%></a></td>
    	   <td><%=e.getStart() %> - <%=e.getEnd() %></td>	
    </tr>
    <%} %>
@@ -38,7 +38,7 @@
 </tr>
 <% List <Expedition> l2 = Core.getDB().getExped("expedition.exped_aim="+a+"AND expedition.exped_result=false");
    for (Expedition e: l2){%>
-   <tr><td><%=e.getLogin() %></td>
+   <tr><td><a href="profile.jsp?user_login=<%=e.getLogin()%>&" ><%=e.getLogin()%></a></td>
    	   <td><%=e.getStart() %> - <%=e.getEnd() %></td>	
    </tr>
    <%} %>

@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<%@ include file="index.jsp"%>
+
 <section>
 Profile
 </section>
-</table>
+<%@ include file="menu.jsp"%>
 
 
 </body>
