@@ -125,9 +125,41 @@ public class DB {
 
 		   
 		   while ( rs.next() ) {
-			    l.add(rs.getString("state_name"));
-		   	
+			    l.add(rs.getString("state_name"));		   	
 		  	    }
+		   rs.close();
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return l;
+	}
+	
+	public List<Expedition> getExped(String attr){
+		List<Expedition> l = new LinkedList<Expedition>();
+		
+		Statement stmt;
+		String where = "";
+		if (attr != null)where = "WHERE "+attr;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT * "+
+			"FROM public.expedition "+
+            where+";"); 
+ 
+
+		   
+		   while ( rs.next() ) {
+			    	  Expedition e = new Expedition(
+			    			  rs.getInt("exped_id"), rs.getDate("exped_start"), rs.getDate("exped_end"),
+			    			  rs.getBoolean("exped_result"), rs.getString("exped_login"), rs.getInt("exped_aim")); 	
+			    	  l.add(e);
+		  	    }
+		   rs.close();
+		   stmt.close(); 
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
