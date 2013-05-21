@@ -68,7 +68,7 @@
 											</td>
 												<td>
 											
-											<%out.print(title); %>
+											<a href="test.jsp?title=<%out.print(title);%>"><%out.print(title);%></a>
 											</td></tr>
 											
 											<% 
@@ -132,7 +132,17 @@
 									%>
 								</td>
 							</tr>
-							</table>
+								</table>
+								
+							
+							<tr><td></td>
+							<td>
+							<input type="submit" value="SEND A NEW MESSAGE!" style="width:250px;height:20px"></td>
+							
+							</tr>
+							
+							
+							
 							
 							</table>
 							
