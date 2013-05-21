@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@ page import="java.sql.*" %>
  <%@ page import = "engine.DB" %>
-  <%@ page import = "engine.Core" %>
+<%@ page import = "engine.Core" %>
   <%@ page import = "domain.State" %>
 <%@ page import = "domain.Point" %>
  <%@ page import="java.util.List"%>
@@ -37,9 +37,13 @@ Points list <br><br>
 
    <%List<State> states = Core.getDB().getStatesList();
   for (State s: states){
-	  Point p = Core.getDB().getPoint(s.getPropPoint());
+	 Point p = Core.getDB().getPoint(s.getPropPoint());
   %>
   <tr><td><%=s.getName()%></td>
+  <td><%=s.getPropPoint()%></td>
+  
+  <td><a href="point.jsp?point_id=<%=p.getId()%>&" ><%=p.getName()%></a></td>
+ 
  
   		
   

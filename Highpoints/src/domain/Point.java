@@ -4,7 +4,7 @@ public class Point {
 
 	private int id;
 	private String name;
-	private float elevation;
+	private double elevation;
 	private String difficulty;
 	private String description;
 	private String routes;
@@ -13,6 +13,7 @@ public class Point {
 	public Point(int id, String name){
 		this.id = id;
 		this.name =name;
+		elevation = 0.0;
 	}
 
 	public int getId() {
@@ -31,11 +32,11 @@ public class Point {
 		this.name = name;
 	}
 
-	public float getElevation() {
+	public double getElevation() {
 		return elevation;
 	}
 
-	public void setElevation(float elevation) {
+	public void setElevation(double elevation) {
 		this.elevation = elevation;
 	}
 

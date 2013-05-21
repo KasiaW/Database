@@ -75,7 +75,7 @@ public class PasswordServlet extends HttpServlet {
 			 PrintWriter out = response.getWriter();
 				out.print("<html><head></head><body><h4 style=font-family:verdana;color:red;font-size:20px;> " +
 						"The password has been succesfully changed!!!</h4>");  
-				out.print("<a href=index21.jsp> Go to the home page </a></body></html>");
+				out.print("<a href=pointsList.jsp> Go to the home page </a></body></html>");
 	
 				}
 					

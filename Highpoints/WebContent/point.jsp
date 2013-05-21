@@ -1,23 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import = "domain.Point" %>
+<%@ page import = "engine.Core" %>
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<%
+ int a = Integer.parseInt(request.getParameter("point_id"));
+ Point p = Core.getDB().getPoint(a);
+%>
 </head>
 <body>
 
-<table>
-<tr>
-	<td><%@ include file="menu.jsp"%> </td>
-	<td>	
-	<p>Point</p>
-	
-	</td>
-</tr>
 
+<section>
+<h2><%=p.getName()%></h2>
+<table>
+	<tr>
+		<td>Location:</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Elevation:</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Difficulty:</td>
+		<td><%=p.getDifficulty() %></td>
+	</tr>
 </table>
+<h3>Overview</h3>
+<p><%=p.getDescription() %></p>
+<h3>Description of routes</h3>
+<p><%=p.getRoutes() %></p>
+<h3>How to get there</h3>
+<p><%=p.getPointAccess() %></p>
+
+</section>
+
+<%@ include file="menu.jsp"%> 
+
 
 
 </body>
