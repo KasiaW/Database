@@ -27,11 +27,6 @@ Points list <br><br>
 <th>ALTERNATIVE POINTS</th>
 
 </tr>
-
-
-  
-    
- 
   
   
 
