@@ -60,7 +60,7 @@ class Register {
 			user2 = false;
 		}
 
-		rs = stmt.executeQuery("SELECT * FROM member WHERE login like '" + mail
+		rs = stmt.executeQuery("SELECT * FROM member WHERE login = '" + mail
 				+ "'");
 
 		while (rs.next()) {

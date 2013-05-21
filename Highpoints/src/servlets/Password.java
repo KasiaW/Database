@@ -33,7 +33,7 @@ class Password {
 
 		Statement stmt = connection.createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT * FROM member WHERE login LIKE '" + user
+				.executeQuery("SELECT * FROM member WHERE login ='" + user
 						+ "'");
 
 	

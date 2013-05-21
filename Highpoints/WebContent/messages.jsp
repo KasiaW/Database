@@ -47,7 +47,7 @@
 										String title = "";
 										Statement stmt = connection.createStatement();
 
-										ResultSet rs = stmt.executeQuery("SELECT * FROM private_messagge where addressee like '"
+										ResultSet rs = stmt.executeQuery("SELECT * FROM private_messagge where addressee ='"
 														+ user + "'");
 
 										while (rs.next()) {

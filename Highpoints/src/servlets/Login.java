@@ -29,7 +29,7 @@ boolean isValid() throws SQLException {
 	
 	
 	Statement stmt = connection.createStatement();
-    ResultSet rs = stmt.executeQuery("SELECT * FROM member WHERE login like '"+user+"'");
+    ResultSet rs = stmt.executeQuery("SELECT * FROM member WHERE login = '"+user+"'");
 
     
     String user1="";

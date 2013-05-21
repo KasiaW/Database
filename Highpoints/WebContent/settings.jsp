@@ -52,7 +52,7 @@
 										Statement stmt = connection.createStatement();
 
 										ResultSet rs = stmt
-												.executeQuery("SELECT * FROM member where login like '"
+												.executeQuery("SELECT * FROM member where login = '"
 														+ user + "'");
 
 										while (rs.next()) {
@@ -67,7 +67,7 @@
 								<td>www</td>
 								<td>
 									<%
-										rs = stmt.executeQuery("SELECT * FROM member where login like '"
+										rs = stmt.executeQuery("SELECT * FROM member where login = '"
 												+ user + "'");
 										String www = "";
 										while (rs.next()) {
@@ -82,7 +82,7 @@
 								<td>Birthday Date</td>
 								<td>
 									<%
-										rs = stmt.executeQuery("SELECT * FROM member where login like '"
+										rs = stmt.executeQuery("SELECT * FROM member where login ='"
 												+ user + "'");
 										String birthday = "";
 										while (rs.next()) {
@@ -97,7 +97,7 @@
 								<td>Description</td>
 								<td>
 									<%
-										rs = stmt.executeQuery("SELECT * FROM member where login like '"
+										rs = stmt.executeQuery("SELECT * FROM member where login ='"
 												+ user + "'");
 										String description = "";
 										while (rs.next()) {

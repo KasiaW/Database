@@ -55,7 +55,7 @@
 										Statement stmt = connection.createStatement();
 
 										ResultSet rs = stmt
-												.executeQuery("SELECT * FROM member where login like '"
+												.executeQuery("SELECT * FROM member where login ='"
 														+ user + "'");
 
 										while (rs.next()) {
