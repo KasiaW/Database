@@ -10,7 +10,7 @@
 <body>
 	<TABLE>
 		<TR>
-			<td><%@ include file="index21.jsp"%></td>
+			<td><%@ include file="menu.jsp"%></td>
 			<td>
 				<table >
 				<tr></tr>

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<%@ include file="index.jsp"%>
+<%@ include file="menu.jsp"%>
 <section>
 Expedition
 </section>

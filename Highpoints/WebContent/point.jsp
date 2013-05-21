@@ -10,7 +10,7 @@
 
 <table>
 <tr>
-	<td><%@ include file="index.jsp"%> </td>
+	<td><%@ include file="menu.jsp"%> </td>
 	<td>	
 	<p>Point</p>
 	

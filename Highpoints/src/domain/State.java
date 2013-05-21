@@ -5,9 +5,9 @@ import java.util.List;
 
 public class State {
 
-	private int id;
+	private int id ;
 	private String name;
-	private int propPoint;
+	private int propPoint =1;
 	private List<Integer> alterPoint;
 	
 	public State (int id, String name){

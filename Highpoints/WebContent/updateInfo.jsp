@@ -10,7 +10,7 @@
 <body>
 	<TABLE cellspacing="30">
 		<TR>
-			<td><%@ include file="index21.jsp"%></td>
+			<td><%@ include file="menu.jsp"%></td>
 			<td>
 				<table width="500">
 					<tr>

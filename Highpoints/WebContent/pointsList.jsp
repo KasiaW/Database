@@ -2,7 +2,9 @@
     pageEncoding="ISO-8859-1"%>
  <%@ page import="java.sql.*" %>
  <%@ page import = "engine.DB" %>
+  <%@ page import = "engine.Core" %>
   <%@ page import = "domain.State" %>
+<%@ page import = "domain.Point" %>
  <%@ page import="java.util.List"%>
 <!DOCTYPE html >
 <html>
@@ -22,55 +24,34 @@ Points list <br><br>
 <tr>
 <th>COUNTRY</th>
 <th>POINT</th>
+<th>ALTERNATIVE POINTS</th>
 
 </tr>
 
- <%  
 
-Class.forName("org.postgresql.Driver"); 
-  
-	Connection connection = DriverManager.getConnection(
-			"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
-			"Phie5pia");
-	
-	
-	Statement stmt = connection.createStatement();
-    ResultSet rs = stmt.executeQuery("SELECT state.state_name, point.point_name" +
-	" FROM public.point,  public.state, public.proper_point" +
-    " WHERE state.state_id = proper_point.p_state_id AND proper_point.p_point_id = point.point_id;"
-    );
-    
-
-    while ( rs.next() ) {
-        String point_name = rs.getString("state_name");
-        String state_name = rs.getString("point_name");
-
-        %>
-        <tr>
-<td><%=point_name%></td>
-<td><%=state_name%></td>
-
-</tr>
-
- <%        
-     }
-
-    %>
   
     
  
   
   
-  </table> 
-  <%List<State> states = new DB().getStatesList();
+
+   <%List<State> states = Core.getDB().getStatesList();
   for (State s: states){
+	  Point p = Core.getDB().getPoint(s.getPropPoint());
   %>
-  <p><%=s.getName() %></p>
+  <tr><td><%=s.getName()%></td>
+ 
+  		
   
-  <%} %>
+  </tr> 
+  
+  <%} %> 
+  
+  </table>
+  
 </section>	
-	
-<%@ include file="index21.jsp"%>	
+
+<%@ include file="menu.jsp"%>	
 
 
 

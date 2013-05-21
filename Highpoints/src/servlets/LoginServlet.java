@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 				 HttpSession session = request.getSession(true); 
 				 
 				 session.setAttribute("currentSessionUser",request.getParameter("un")); 
-				 response.sendRedirect("index21.jsp"); //logged-in page 
+				 response.sendRedirect("pointsList.jsp"); //logged-in page 
 			}
 				
 				 else{ response.sendRedirect("failNew.jsp"); //error page 
