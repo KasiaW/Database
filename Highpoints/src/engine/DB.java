@@ -1,7 +1,9 @@
 package engine;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -80,7 +82,7 @@ public class DB {
 	
 	public Point getPoint(int id){
 		Statement stmt;
-		Point p = new Point(id,"mum");
+		Point p = null;
 		
 		try {
 			stmt = connection.createStatement();
@@ -110,6 +112,34 @@ public class DB {
 		}
 		
 		return p;
+	}
+	
+	//only id with names
+	public List<Point> getPointsList(){
+		List <Point> l = new LinkedList<Point>();
+		Statement stmt;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT *" +
+		    		" FROM public.point;"
+		    	    );
+
+		 
+		   while ( rs.next() ) {
+			   
+		   	   	Point p = new Point((rs.getInt("point_id")), rs.getString("point_name"));
+		    	l.add(p); 	
+
+		  	    }
+		rs.close();
+		stmt.close();
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return l;
 	}
 	
 	public List<String> getLocation(int pointId){
@@ -208,6 +238,30 @@ public class DB {
 		
 		
 		return m;
+	}
+	
+	public void insertExpedition(Date start, Date end, boolean result, String login, int point){
+	
+		
+		try {
+			PreparedStatement stmt= connection.prepareStatement("INSERT INTO expedition (exped_start, exped_end, exped_result, exped_login, exped_aim) VALUES ( ?, ?,?,?,?)");
+			stmt.setDate(1, start);
+			stmt.setDate(2, end );
+			stmt.setBoolean(3, result);
+			stmt.setString(4, login);
+			stmt.setInt(5, point);
+			stmt.execute();
+
+
+		   
+		   
+		  
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 

@@ -4,13 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Insert title here</title>
 </head>
 <body>
 
 <%@ include file="menu.jsp"%>
 <section>
-Expedition
+My Expeditions
+
+<a href="create_expedition.jsp"><button>Add new</button></a>
 </section>
 
 </body>

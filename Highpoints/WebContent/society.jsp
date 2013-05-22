@@ -62,7 +62,7 @@
    <%} %>
 </table>
 <p>You</p>
-<button>I was there!</button>
+<a href="create_expedition.jsp?aim_id=<%=p.getId()%>"><button>I was there!</button></a>
 <button>I wanna climb there!</button>
 
 </section>
