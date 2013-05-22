@@ -14,31 +14,34 @@
 </head>
 <body>
 <section>
-	<TABLE cellspacing="40">
+	<TABLE cellspacing=10>
 		<TR>
 			
 			<td>
 				<table>
 					<tr>
 						<td>
-							<h3>
+							<b>
 								At the moment you are logged as:
 								<%
 								out.print(session.getAttribute("currentSessionUser"));
-							%>
-							</h3>
+							%></b>
+							
 						</td>
 					</tr>
+					
 					<table border="1">
 						
+						<form action="MessageServlet">
+							
 							<tr>
-								<td><b>To</b></td>
+								<td><b>To*</b></td>
 								<td><input type="text" name="addressee" size="55" value="<%=a%>"></td>
 								
 							</tr>
 							
 							<tr>
-								<td><b>Title</b></td>
+								<td><b>Title*</b></td>
 								<td><input type="text" name="title" size="55"></td>
 								
 							</tr>
@@ -46,14 +49,18 @@
 						
 							<tr >
 							
-								<td ><b>Message</b></td>
+								<td ><b>Message*</b></td>
 								<td><textarea  name="message" rows="15" cols="40"></textarea></td>
 								
 							</tr>
-					
+							<table>
+							<tr>All the * fields are compulsory</tr>
+							<tr> <td><input type="submit" value="SEND MESSAGE"
+									style="width: 400px; height: 30px"></td>   </tr>
 							
+							</table>
 								
-					
+							</form>
 
 
 					</table>

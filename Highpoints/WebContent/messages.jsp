@@ -46,6 +46,7 @@
 								String sender = "";
 								String date = "";
 								String title = "";
+								String mesId = "";
 								Statement stmt = connection.createStatement();
 
 								ResultSet rs = stmt
@@ -57,6 +58,8 @@
 									sender = rs.getString("sender");
 									date = rs.getString("msg_date");
 									title = rs.getString("msg_title");
+									mesId = rs.getString("msg_id");
+
 							%>
 							<tr>
 								<td>
@@ -69,7 +72,7 @@
 										out.print(date);
 									%>
 								</td>
-								<td><a href="showMessage.jsp?title=<%out.print(title);%>&">
+								<td><a href="showMessage.jsp?title=<%out.print(mesId);%>&">
 										<%
 											out.print(title);
 										%>
@@ -103,9 +106,10 @@
 									String addresser = "";
 									String date1 = "";
 									String title1 = "";
+									String msId = "";
 
 									rs = stmt
-											.executeQuery("SELECT * FROM private_messagge where sender like '"
+											.executeQuery("SELECT * FROM private_messagge where sender = '"
 													+ user + "'");
 
 									while (rs.next()) {
@@ -113,6 +117,7 @@
 										addresser = rs.getString("sender");
 										date1 = rs.getString("msg_date");
 										title1 = rs.getString("msg_title");
+										msId = rs.getString("msg_id");
 								%>
 								<tr>
 									<td>
@@ -126,7 +131,7 @@
 										%>
 									</td>
 									<td>
-										<a href="showMessage2.jsp?title=<%out.print(title1);%>&">
+										<a href="showMessage2.jsp?title=<%out.print(msId);%>&">
 										<%
 											out.print(title1);
 										%></a>
@@ -140,14 +145,16 @@
 								</tr>
 							</table>
 
-
+							<form action="newMessage.jsp">
 							<tr>
 								<td></td>
 								<td><input type="submit" value="SEND A NEW MESSAGE!"
 									style="width: 250px; height: 20px"></td>
 
 							</tr>
-
+							
+							
+							</form>
 						</table>
 
 
