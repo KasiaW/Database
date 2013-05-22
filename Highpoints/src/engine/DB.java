@@ -200,6 +200,15 @@ public class DB {
 		
 		return l;
 	}
+	
+	public Member getMember(String login){
+		Member m =null;
+		
+		
+		
+		
+		return m;
+	}
 
 
 }

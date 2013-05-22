@@ -61,7 +61,9 @@
    </tr>
    <%} %>
 </table>
-
+<p>You</p>
+<button>I was there!</button>
+<button>I wanna climb there!</button>
 
 </section>
 <%@ include file="menu.jsp"%>	
