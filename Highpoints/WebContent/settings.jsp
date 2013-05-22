@@ -8,10 +8,8 @@
 <title>Settings</title>
 </head>
 <body>
-	<TABLE cellspacing="40">
-		<TR>
-			<td><%@ include file="menu.jsp"%></td>
-			<td>
+<section>
+
 				<table>
 					<tr>
 						<td>
@@ -144,10 +142,8 @@
 						</table>
 						
 				</table>
-		</tr>
 
-
-		</td>
-	</table>
+	</section>
+	<%@ include file="menu.jsp"%>
 </body>
 </html>

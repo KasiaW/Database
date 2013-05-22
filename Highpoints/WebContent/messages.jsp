@@ -8,10 +8,8 @@
 <title>Settings</title>
 </head>
 <body>
-	<TABLE cellspacing="40">
-		<TR>
-			<td><%@ include file="menu.jsp"%></td>
-			<td>
+<section>
+
 				<table>
 					<tr>
 						<td>
@@ -143,21 +141,14 @@
 								%>
 								</td>
 								</tr>
-							</table>
-
+							</table></table></table></table>
+<p></p>
 							<form action="newMessage.jsp">
-							<tr>
-								<td></td>
-								<td><input type="submit" value="SEND A NEW MESSAGE!"
-									style="width: 250px; height: 20px"></td>
-
-							</tr>
-							
-							
+							<input type="submit" value="SEND A NEW MESSAGE!"
+									style="width: 250px; height: 20px">
 							</form>
-						</table>
 
-
-					</table>
+</section>
+<%@ include file="menu.jsp"%>					
 </body>
 </html>
