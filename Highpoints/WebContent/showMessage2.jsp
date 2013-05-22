@@ -47,7 +47,7 @@
 										Statement stmt = connection.createStatement();
 
 										ResultSet rs = stmt.executeQuery("SELECT * FROM private_messagge where msg_id ='"
-														+ request.getParameter("title") + "'AND addressee='"+user+"';");
+														+ request.getParameter("title") +"'");
 
 										while (rs.next()) {
 										

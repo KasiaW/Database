@@ -114,7 +114,7 @@
 
 									while (rs.next()) {
 
-										addresser = rs.getString("sender");
+										addresser = rs.getString("addressee");
 										date1 = rs.getString("msg_date");
 										title1 = rs.getString("msg_title");
 										msId = rs.getString("msg_id");

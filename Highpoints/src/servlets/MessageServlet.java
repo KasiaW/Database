@@ -81,6 +81,7 @@ public class MessageServlet extends HttpServlet {
 			
 			out.print("<html><head></head><body><h4 style=font-family:verdana;font-size:20px;> " +
 					"Your message has been correctly sent to "+addressee+" </h4>");  
+			out.print("<a href=messages.jsp> Return to messages page </a></body></html>");
 			
 		 
 		 
