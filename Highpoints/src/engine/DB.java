@@ -113,6 +113,46 @@ public class DB {
 		
 		return p;
 	}
+	public Member getMembeÄr(String login){
+		Statement stmt;
+		Member p = null;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT * FROM member WHERE login='"+login+"';");
+		    	   
+		   while ( rs.next() ) {
+			   
+		   	   	p = new Member(login);
+		    	    	String x = null;
+		    	    	if ((x = rs.getString("mail"))!= null) p.setMail(x);
+		    	    	if ((x = rs.getString("www"))!= null) p.setWWW(x);
+		    	    	if ((x = rs.getString("birtdhay"))!= null) p.setBirthday(x);
+		    	    	if ((x = rs.getString("joined"))!= null) p.setJoined(x);
+		    	    	if ((x = rs.getString("description"))!= null) p.setDescription(x);
+		  	    }
+		rs.close();
+		stmt.close();
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return p;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//only id with names
 	public List<Point> getPointsList(){
@@ -262,14 +302,6 @@ public class DB {
 		return l;
 	}
 	
-	public Member getMember(String login){
-		Member m =null;
-		
-		
-		
-		
-		return m;
-	}
 	
 	public void insertExpedition(Date start, Date end, boolean result, String login, int point){
 	

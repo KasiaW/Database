@@ -6,21 +6,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
-<%
-String login = request.getParameter("user_login");
-Member m = Core.getDB().getMember(login);
-%>
+<title>Profile</title>
 </head>
 <body>
-
-
 <section>
-Profile
+
+				<table>
+					<tr>
+						<td>
+							<h3>
+								At the moment you are logged as:
+								<%
+								String login = request.getParameter("user_login");
+								Member m = Core.getDB().getMember(login);
+							
+								
+							%>
+							</h3>
+						</td>
+						</tr>
+				
+</table>
 </section>
-<%@ include file="menu.jsp"%>
-
-
+<%@ include file="menu.jsp"%>					
 </body>
 </html>
