@@ -2,6 +2,9 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "engine.Core" %>
 <%@ page import = "domain.Member" %>
+<%@ page import = "domain.Expedition" %>
+<%@ page import = "domain.Point" %>
+<%@ page import="java.util.List"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -10,21 +13,68 @@
 </head>
 <body>
 <section>
+<%
+Class.forName("org.postgresql.Driver"); 
+String login = (session.getAttribute("currentSessionUser")).toString();
+Member m = Core.getDB().getMember(login); 
+List <Expedition> list = Core.getDB().getSucExped(login);
+%>
 
-				<table>
+<table>
 					<tr>
 						<td>
 							<h3>
 								At the moment you are logged as:
 								<%
-								String login = request.getParameter("user_login");
-								Member m = Core.getDB().getMember(login);
-							
-								
+								out.println(login);
 							%>
 							</h3>
+							
 						</td>
 						</tr>
+						
+					<td><b>THESE ARE THE DATA STORED ABOUT YOU</b></td>	
+					<table border="1">
+					<tr>
+					<td><b>User</b></td>
+					<td><%out.print(login); %></td></tr>
+					<tr><td><b>Mail</b></td>
+					<td><%out.print(m.getMail()); %></td>
+					<tr><td><b>WWW</b></td>
+					<td><%out.print(m.getWWW()); %></td></tr>
+					<tr><td><b>Birthday Date</b></td>
+					<td><%out.print(m.getBirthday()); %></td></tr>
+					<tr><td><b>Joined Date</b></td>
+					<td><%out.print(m.getJoined()); %></td></tr>
+					<tr><td><b>Description</b></td>
+					<td><%out.print(m.getDescription()); %></td></tr>
+					</table>
+					<h1>  </h1>
+					<h1>  </h1>
+					<h1>  </h1>
+					
+					<tr><td><b>SUCCEDED EXPEDTION</b></tr>
+					<table border="1">
+					<tr><td><b>Time</b></td><td><b>Reached Point</b></td></tr>
+					<tr>
+					<% for (Expedition e : list){%>
+						<tr><td><%  out.print(e.getStart()+" - " + e.getEnd()); %></td>
+						<td>
+						
+						
+						<% Point point = Core.getDB().getPoint(e.getPoint());
+							String rPoint = point.getName();%>
+							<a href="point.jsp?point_id=<%=point.getId()%>&" ><%=point.getName()%></a>
+												
+						<% 
+					} %>
+					
+				</table>
+					
+					
+					
+					
+					
 				
 </table>
 </section>

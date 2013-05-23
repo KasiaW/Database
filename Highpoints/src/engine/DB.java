@@ -20,6 +20,7 @@ public class DB {
 
 	public DB(){
 		try {
+		
 			connection = DriverManager.getConnection(
 					"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
 					"Phie5pia");
@@ -113,7 +114,7 @@ public class DB {
 		
 		return p;
 	}
-	public Member getMembeÄr(String login){
+	public Member getMember(String login){
 		Statement stmt;
 		Member p = null;
 		
@@ -127,7 +128,7 @@ public class DB {
 		    	    	String x = null;
 		    	    	if ((x = rs.getString("mail"))!= null) p.setMail(x);
 		    	    	if ((x = rs.getString("www"))!= null) p.setWWW(x);
-		    	    	if ((x = rs.getString("birtdhay"))!= null) p.setBirthday(x);
+		    	    	if ((x = rs.getString("birthday"))!= null) p.setBirthday(x);
 		    	    	if ((x = rs.getString("joined"))!= null) p.setJoined(x);
 		    	    	if ((x = rs.getString("description"))!= null) p.setDescription(x);
 		  	    }
@@ -149,10 +150,7 @@ public class DB {
 	
 	
 	
-	
-	
-	
-	
+
 	
 	//only id with names
 	public List<Point> getPointsList(){
@@ -237,6 +235,47 @@ public class DB {
 		
 		return l;
 	}
+	
+	
+	public List<Expedition> getSucExped(String login){
+		List<Expedition> l = new LinkedList<Expedition>();
+		
+		Statement stmt;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT * "+
+			"FROM expedition WHERE exped_login='"+login+"' AND exped_result='TRUE'");
+ 
+
+		   
+		   while ( rs.next() ) {
+			    	  Expedition e = new Expedition(
+			    			  rs.getInt("exped_id"), rs.getDate("exped_start"), rs.getDate("exped_end"),
+			    			  rs.getBoolean("exped_result"), rs.getString("exped_login"), rs.getInt("exped_aim")); 	
+			    	  l.add(e);
+		  	    }
+		   rs.close();
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return l;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public List<Plan> getPlan(String attr){
 		List<Plan> l = new LinkedList<Plan>();
