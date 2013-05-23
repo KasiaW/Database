@@ -23,11 +23,13 @@
 <table border=1>
 <tr><td>POINT</td>
 	<td>DATE</td>
+	<td>POSTS</td>
 </tr>
 <% List <Expedition> l = Core.getDB().getExped("expedition.exped_result=true AND expedition.exped_login='"+session.getAttribute("currentSessionUser")+"'");
    for (Expedition e: l){%>
    <tr><td><a href="point.jsp?point_id=<%=e.getPoint()%>&" ><%=Core.getDB().getPoint(e.getPoint()).getName()%></a></td>
    	   <td><%=e.getStart() %> - <%=e.getEnd() %></td>	
+   	   <td><a href="create_post.jsp?exped_id=<%=e.getId()%>&"><button>Write post</button></a></td>
    </tr>
    <%} %>
 </table>
@@ -36,11 +38,13 @@
 <table border=1>
 <tr><td>POINT</td>
 	<td>DATE</td>
+	<td>POSTS</td>
 </tr>
 <% List <Expedition> l2 = Core.getDB().getExped("expedition.exped_result=false AND expedition.exped_login='"+session.getAttribute("currentSessionUser")+"'");
    for (Expedition e: l){%>
    <tr><td><a href="point.jsp?point_id=<%=e.getPoint()%>&" ><%=Core.getDB().getPoint(e.getPoint()).getName()%></a></td>
    	   <td><%=e.getStart() %> - <%=e.getEnd() %></td>	
+   	   <td><a href="create_post.jsp?exped_id=<%=e.getId()%>&"><button>Write post</button></a></td>
    </tr>
    <%} %>
 </table>

@@ -231,6 +231,37 @@ public class DB {
 		return l;
 	}
 	
+	public List<Post> getPostsList(String attr){
+		List<Post> l = new LinkedList<Post>();
+		
+		Statement stmt;
+		String where = "WHERE member_experience.exper_id = expedition.exped_id AND member_experience.exper_post = post.post_id ";
+		if (attr != null)where += " AND "+ attr;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT post.post_id, post.post_date, post.category, post.post_content "+
+			"FROM public.expedition, public.post, public.member_experience "+
+            where+";"); 
+ 
+
+		   
+		   while ( rs.next() ) {
+			    	  Post p = new Post(
+			    			  rs.getInt("post_id"), rs.getDate("post_date"), rs.getString("category"),
+			    			  rs.getString("post_content")); 	
+			    	  l.add(p);
+		  	    }
+		   rs.close();
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return l;
+	}
+	
 	public Member getMember(String login){
 		Member m =null;
 		
