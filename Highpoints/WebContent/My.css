@@ -41,3 +41,17 @@ section {
 	left: 14em;
 	top: 5em;
 }
+
+form ul{
+	list-style: none;
+	
+}
+
+.post{
+	width:80%;
+	background-color:yellowgreen;
+	padding:15px;
+	border-radius:5px;
+	margin-bottom:30px;
+	box-shadow: 15px 15px 50px dimgrey;
+}

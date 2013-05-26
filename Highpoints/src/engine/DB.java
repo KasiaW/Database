@@ -13,6 +13,7 @@ import java.util.List;
 
 import domain.*;
 
+
 public class DB {
 
 	Connection connection;
@@ -210,20 +211,20 @@ public class DB {
 		
 		Statement stmt;
 		String where = "";
-		if (attr != null)where = "WHERE "+attr;
+		if (attr != null)where = "WHERE p.point_id = e.exped_aim AND "+attr;
 		
 		try {
 			stmt = connection.createStatement();
-		    ResultSet rs = stmt.executeQuery("SELECT * "+
-			"FROM public.expedition "+
+		    ResultSet rs = stmt.executeQuery("SELECT e.exped_id, e.exped_start, e.exped_end, e.exped_login, p.point_name, p.point_id "+
+			"FROM public.expedition e, public.point p "+
             where+";"); 
  
 
 		   
-		   while ( rs.next() ) {
+		  while ( rs.next() ) {
 			    	  Expedition e = new Expedition(
 			    			  rs.getInt("exped_id"), rs.getDate("exped_start"), rs.getDate("exped_end"),
-			    			  rs.getBoolean("exped_result"), rs.getString("exped_login"), rs.getInt("exped_aim")); 	
+			    			 rs.getString("point_name"),rs.getInt("point_id"), rs.getString("exped_login")); 	
 			    	  l.add(e);
 		  	    }
 		   rs.close();
@@ -314,7 +315,7 @@ public class DB {
 		List<Post> l = new LinkedList<Post>();
 		
 		Statement stmt;
-		String where = "WHERE member_experience.exper_id = expedition.exped_id AND member_experience.exper_post = post.post_id ";
+		String where = "WHERE member_experience.exper_exped = expedition.exped_id AND member_experience.exper_post = post.post_id ";
 		if (attr != null)where += " AND "+ attr;
 		
 		try {
@@ -365,6 +366,44 @@ public class DB {
 		}
 		
 	}
+	
+	public void insertPost(String[] exped, String content, String login, Date date, String category ){
+		
+		try {
+			PreparedStatement stmt= connection.prepareStatement("INSERT INTO post (post_date, category, post_content) VALUES ( ?, ?::post_type,?) RETURNING post_id");
+			stmt.setDate(1, date);
+			stmt.setString(2,category);
+			stmt.setString(3, content);
+			
+			
+			stmt.execute();
+			ResultSet r = stmt.getResultSet();
+			r.next();
+			int postId = r.getInt(1);	
+			stmt.close(); 
+			
+			
+			
+			stmt= connection.prepareStatement("INSERT INTO member_experience (exper_exped, exper_post) VALUES ( ?, ?);");
+			for (String eId :exped){
+				stmt.setInt(1, Integer.parseInt(eId));
+				stmt.setInt(2, postId);
+				stmt.execute();
+				
+			}
+			
+
+		   
+		   
+		  
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 
 
 }

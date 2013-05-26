@@ -26,7 +26,7 @@
 
 <nav>
 <ul>
-	<li><a href="profile.jsp">My profile</a></li>
+	<li><a href="profile.jsp?user_login=<%=session.getAttribute("currentSessionUser")%>&">My profile</a></li>
 	<li><a href="expedition.jsp">My expeditions</a></li>
 	<li><a href="messages.jsp">Messages</a></li>
 	<li><a href="settings.jsp">Settings</a></li>
@@ -38,8 +38,8 @@
  <nav>
 <ul>
 	<li><a href="point.jsp?point_id=<%=id%>&">Overview</a></li>
-	<li><a href="tips.jsp?point_id=<%=id%>&">Tips</a></li>
-	<li><a href="reports.jsp?point_id=<%=id%>&">Reports</a></li>
+	<li><a href="posts.jsp?type=tip&point_id=<%=id%>&">Tips</a></li>
+	<li><a href="posts.jsp?type=report&point_id=<%=id%>&">Reports</a></li>
 	<li><a href="society.jsp?point_id=<%=id%>&">Society</a></li>
 </ul>
 </nav>

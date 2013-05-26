@@ -10,6 +10,7 @@ public class Expedition {
 	private boolean result;
 	private String login;
 	private int point;
+	private String pointName;
 	
 	public Expedition(int id, Date start, Date end, boolean result, String login, int point){
 		this.id = id;
@@ -18,6 +19,15 @@ public class Expedition {
 		this.result = result;
 		this.login = login;
 		this.point = point;
+	}
+	
+	public Expedition(int id, Date start, Date end, String pointName, int point, String login){
+		this.id = id;
+		this.start = start;
+		this.end = end;
+		this.pointName = pointName;
+		this.point = point;
+		this.login = login;
 	}
 	
 	public int getId() {
@@ -55,6 +65,14 @@ public class Expedition {
 	}
 	public void setPoint(int point) {
 		this.point = point;
+	}
+
+	public String getPointName() {
+		return pointName;
+	}
+
+	public void setPointName(String pointName) {
+		this.pointName = pointName;
 	}
 	
 	

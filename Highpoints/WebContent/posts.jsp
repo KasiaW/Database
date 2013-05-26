@@ -7,20 +7,27 @@
 <!DOCTYPE html >
 <%
  Integer p = Integer.parseInt(request.getParameter("point_id"));
- List <Post> posts = Core.getDB().getPostsList("post.category = 'report' AND expedition.exped_aim = "+p);
-
+ String type = request.getParameter("type");
+List <Post> posts = Core.getDB().getPostsList("post.category = '"+type+"' AND expedition.exped_aim = "+p);
  
 %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Reports</title>
+<title>Posts</title>
 </head>
 <body>
-<section><h2>Reports</h2>
+<section><h2><%=type %>s</h2>
 <%for (Post post: posts) {%>
+<div class="post">
 <%=post.getContent() %>
+<p></p>
+<details>
+<summary>Comments</summary>
+<!-- IMPLEMENT COMMENTS HERE -->
 
+</details>
+</div>
 <%} %>
 
 </section>

@@ -15,29 +15,18 @@
 <section>
 <%
 Class.forName("org.postgresql.Driver"); 
-String login = (session.getAttribute("currentSessionUser")).toString();
+String login = request.getParameter("user_login");
 Member m = Core.getDB().getMember(login); 
 List <Expedition> list = Core.getDB().getSucExped(login);
 %>
 
-<table>
-					<tr>
-						<td>
-							<h3>
-								At the moment you are logged as:
-								<%
-								out.println(login);
-							%>
-							</h3>
-							
-						</td>
-						</tr>
+<h2><%=login %></h2>
 						
-					<td><b>THESE ARE THE DATA STORED ABOUT YOU</b></td>	
-					<table border="1">
+					
+					<table>
 					<tr>
-					<td><b>User</b></td>
-					<td><%out.print(login); %></td></tr>
+					
+					<td></td></tr>
 					<tr><td><b>Mail</b></td>
 					<td><%out.print(m.getMail()); %></td>
 					<tr><td><b>WWW</b></td>
