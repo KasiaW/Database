@@ -404,6 +404,54 @@ public class DB {
 	}
 	
 	
+	public List<Comment> getComment(String id){
+		List<Comment> l = new LinkedList<Comment>();
+		
+		Statement stmt;
+		
+		try {
+			stmt = connection.createStatement();
+		    ResultSet rs = stmt.executeQuery("SELECT * "+
+			"FROM member_comment WHERE comment_post='"+id+"'");
+ 
 
+		   
+		   while ( rs.next() ) {
+			    	  Comment e = new Comment(
+			    			  rs.getInt("comment_id"), rs.getDate("comment_date"), rs.getString("comment_content"),
+			    			  rs.getString("comment_author"), rs.getInt("comment_post")); 	
+			    	  l.add(e);
+		  	    }
+		   rs.close();
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return l;
+	}
 
+public void insertComment(int id, String author, String content){
+		
+		try {
+			
+			PreparedStatement stmt = connection.prepareStatement("INSERT INTO comment(comment_id,comment_date,comment_content,comment_author_commentpost)" + 
+					"VALUES('"+id+"','"+author+"', '"+content+"',)'");
+			stmt.setInt(1, id);
+			stmt.setString(2,author);
+			stmt.setString(3, content);
+			
+			
+			stmt.execute();
+			ResultSet r = stmt.getResultSet();
+			r.next();
+			stmt.close(); 
+			
+			
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

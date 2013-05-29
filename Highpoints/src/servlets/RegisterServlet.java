@@ -71,12 +71,12 @@ public class RegisterServlet extends HttpServlet {
 						 
 						    PrintWriter out = response.getWriter();
 							out.print("<html><head></head><body><h4 style=font-family:verdana;color:red;font-size:20px;> " +
-									"Something goes wrong during the registration</h4>");
+									"Something went wrong during the registration</h4>");
 							out.print("<h3 style=font-family:verdana;color:red;>" +
 									"Probably the choosen user is already in use or your email is already registered </body></html>");
-							out.print("<h3 style=font-family:verdana;color:red;> Or you haven't filled the compulsory fields"); 
-							out.print("<h3 style=font-family:verdana;color:red;> Or the inserted date is not in the right form"); 
-							out.print("<h3 style=font-family:verdana;color:red;> PLEASE RETRY");  
+							out.print("<h3 style=font-family:verdana;color:red;> Or you haven't filled the compulsory fields</h3>"); 
+							out.print("<h3 style=font-family:verdana;color:red;> Or the inserted date is not in the right form</h3>"); 
+							out.print("<h3 style=font-family:verdana;color:red;> PLEASE RETRY</h3>");  
 						 
 							out.print("<a href=register.jsp> Go to registration page </a></body></html>");
 					
