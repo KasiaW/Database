@@ -9,15 +9,11 @@ import java.text.SimpleDateFormat;
 
 public class Comment {
 	
-		int id;
-		String date;
 		String content;
 		String author;
-		int idPost;
+		String idPost;
 
-		public Comment (int id, String content, String author){
-			this.id = id;
-			this.date = date;
+		public Comment (String idPost, String content, String author){
 			this.content = content;
 			this.author = author;
 			this.idPost = idPost;
@@ -35,9 +31,8 @@ public class Comment {
 			
 			Statement stmt = connection.createStatement();
 			if (content.length() != 0){
-			java.util.Date date1 =  new SimpleDateFormat("yyyy-MM-dd").parse(date);
-		    stmt.executeUpdate("INSERT INTO comment(comment_id,comment_date,comment_content,comment_author_commentpost)" + 
-			"VALUES('"+id+"','"+date+"','"+content+"', '"+author+"', '"+idPost+"',)' ");
+		    stmt.executeUpdate("INSERT INTO comment(comment_idPost,comment_content,comment_author)" + 
+			"VALUES('"+idPost+"', '"+author+"', '"+content+"',)' ");
 		    		
 			}
 			

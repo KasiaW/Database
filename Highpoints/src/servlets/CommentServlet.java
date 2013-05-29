@@ -48,9 +48,9 @@ public class CommentServlet extends HttpServlet  {
 			
 			HttpSession session = request.getSession(true); 
 			
-			String content = request.getParameter("SubmitComment");
+			String content = request.getParameter("comment");
 			String author = request.getParameter("author");
-			int idPost = Integer.parseInt(request.getParameter("idPost"));
+			String idPost = request.getParameter("idPost");
 
 			try {
 			
