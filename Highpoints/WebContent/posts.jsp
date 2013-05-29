@@ -49,8 +49,9 @@
 	</tr>
 	<%} %>
 	<tr height="25px">
-		<form action="CommentServlet" idPost="<%= post.getId() %>">
+		<form action="CommentServlet">
 			<td width="215px"><input type="text" name="comment" ></td>
+			<input type= "hidden" name="idPost" value="<%=post.getId()%>">
 			<td> <input type="submit" name="SubmitComment" value="Submit Comment" style="width:150px;height:25px;"> </td>
 		</form>
 	</tr>

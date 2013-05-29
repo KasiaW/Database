@@ -49,7 +49,7 @@ public class CommentServlet extends HttpServlet  {
 			HttpSession session = request.getSession(true); 
 			
 			String content = request.getParameter("comment");
-			String author = request.getParameter("author");
+			String author = (session.getAttribute("currentSessionUser")).toString();
 			String idPost = request.getParameter("idPost");
 
 			try {

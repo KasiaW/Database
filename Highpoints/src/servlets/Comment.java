@@ -31,8 +31,8 @@ public class Comment {
 			
 			Statement stmt = connection.createStatement();
 			if (content.length() != 0){
-		    stmt.executeUpdate("INSERT INTO comment(comment_idPost,comment_content,comment_author)" + 
-			"VALUES('"+idPost+"', '"+author+"', '"+content+"',)' ");
+		    stmt.executeUpdate("INSERT INTO member_comment (comment_post,comment_content,comment_author)" + 
+			"VALUES('"+idPost+"', '"+content+"', '"+author+"')");
 		    		
 			}
 			
