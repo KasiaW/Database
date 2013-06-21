@@ -5,23 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Settings</title>
+<title>Messages</title>
 </head>
 <body>
 <section>
-
-				<table>
-					<tr>
-						<td>
-							<h3>
-								At the moment you are logged as:
-								<%
-								out.print(session.getAttribute("currentSessionUser"));
-							%>
-							</h3>
-						</td>
-					</tr>
-					<table>
+<h2>My mailbox</h2>
+		
 						<b>RECEIVED MESSAGES</b>
 						<table border="1">
 
@@ -80,14 +69,13 @@
 							<%
 								}
 							%>
-							</td>
-							</tr>
+						
 						</table>
 						<h1></h1>
 
 
 
-						<table>
+						
 							<b>SENT MESSAGES</b>
 							<table border="1">
 

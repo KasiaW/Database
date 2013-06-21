@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Society</title>
 <%
  int a = Integer.parseInt(request.getParameter("point_id"));
  Point p = Core.getDB().getPoint(a);
@@ -19,8 +19,9 @@
 
 <section><h2>Society</h2>
 
+<div class="post">
 <p>Members who reached <%=p.getName() %></p>
-<table border=1>
+<table >
 <tr><td>LOGIN</td>
 	<td>DATE</td>
 </tr>
@@ -31,9 +32,11 @@
    </tr>
    <%} %>
 </table>
+</div>
 
+<div class="post">
 <p>Members who failed <%=p.getName() %></p>
-<table border=1>
+<table >
 <tr><td>LOGIN</td>
 	<td>DATE</td>
 </tr>
@@ -44,9 +47,10 @@
    </tr>
    <%} %>
 </table>
-
+</div>
+<div class="post">
 <p>Members who want to go to <%=p.getName() %></p>
-<table border=1>
+<table>
 <tr><td>LOGIN</td>
 	<td>READINESS</td>
 	<td>NOTES</td>
@@ -61,10 +65,12 @@
    </tr>
    <%} %>
 </table>
+</div>
+<div class="post">
 <p>You</p>
 <a href="create_expedition.jsp?aim_id=<%=p.getId()%>"><button>I was there!</button></a>
 <button>I wanna climb there!</button>
-
+</div>
 </section>
 <%@ include file="menu.jsp"%>	
 </body>

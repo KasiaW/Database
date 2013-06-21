@@ -33,7 +33,7 @@
 <details>
 <summary>Comments</summary>
 
-<!-- IMPLEMENT COMMENTS HERE -->
+<!-- COMMENTS -->
 
 <table border = "1">
 	<tr>

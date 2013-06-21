@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Overview</title>
 <%
  int a = Integer.parseInt(request.getParameter("point_id"));
  Point p = Core.getDB().getPoint(a);
@@ -18,6 +18,7 @@
 
 <section>
 <h2><%=p.getName()%></h2>
+<div class="post">
 <table>
 	<tr>
 		<td>Location:</td>
@@ -43,7 +44,7 @@
 <h3>How to get there</h3>
 <p><%=p.getPointAccess() %></p>
 
-</section>
+</div></section>
 
 <%@ include file="menu.jsp"%> 
 
