@@ -102,7 +102,7 @@ public class DB {
 		    	    	if ((x = rs.getString("description"))!= null) p.setDescription(x);
 		    	    	if ((x = rs.getString("routes"))!= null) p.setRoutes(x);
 		    	    	if ((x = rs.getString("point_access"))!= null) p.setPointAccess(x);
-		    	    	//if ((x = rs.getString("elevation"))!= null) p.setElevation(Double.parseDouble(x));
+		    	    	if ((x = rs.getString("elevation"))!= null) p.setElevation(Double.parseDouble(x));
 		    	    	//p.setElevation(rs.getDouble("elevation"));
 
 		  	    }

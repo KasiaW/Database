@@ -29,7 +29,7 @@
 	</tr>
 	<tr>
 		<td>Elevation:</td>
-		<td></td>
+		<td><%out.print(p.getElevation()); %></td>
 	</tr>
 	<tr>
 		<td>Difficulty:</td>
