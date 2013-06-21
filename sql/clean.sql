@@ -1,0 +1,13 @@
+﻿DROP TABLE private_messagge;
+DROP TABLE member_comment;
+DROP TABLE plan;
+DROP TABLE proper_point;
+DROP TABLE alternative_point;
+DROP TABLE member_experience;
+DROP TABLE post;
+DROP TABLE expedition;
+DROP TABLE member;
+DROP TABLE point;
+DROP TABLE state;
+DROP TYPE post_type;
+DROP TYPE readiness_type;
