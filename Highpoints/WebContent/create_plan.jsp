@@ -14,7 +14,7 @@
 <section>
 <h2>Create new plan</h2>
 <div class="post">
-<form>
+<form method="post" action="PlanServlet">
 <p>
 Where do you want to go?
 </p>
@@ -33,17 +33,18 @@ Where do you want to go?
 	<%} %>
 <p>	
 Readiness	
-	<select name="category">
+	<select name="readiness">
 		<option value="no">no</option>
 		<option value="companions_need">I'm looking for companions</option>
-		<option value="prepered">Everything prepared</option>
+		<option value="prepared">Everything prepared</option>
 		</select>
 		</p>
 	
 Notes
 
-<p><textarea rows="4"cols="40">
+<p><textarea rows="4"cols="40" name="notes">
 </textarea></p>
+<input type="hidden" name="login" value="<%=session.getAttribute("currentSessionUser") %>">
 <button>Save</button>
 </form>
 </div></section>

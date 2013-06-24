@@ -373,6 +373,30 @@ public class DB {
 		
 	}
 	
+	
+	public void insertPlan(String readiness, String login, int point, String notes){
+	
+		
+		try {
+			PreparedStatement stmt= connection.prepareStatement("INSERT INTO plan (plan_login, plan_point, readiness, plan_desc) VALUES ( ?,?,?::readiness_type,?)");
+			stmt.setString(1, login);
+			stmt.setInt(2, point);
+			stmt.setString(3, readiness);
+			stmt.setString(4, notes);
+			stmt.execute();
+
+
+		   
+		   
+		  
+		   stmt.close(); 
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public void insertPost(String[] exped, String content, String login, Date date, String category ){
 		
 		try {

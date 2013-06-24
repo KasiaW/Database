@@ -64,7 +64,7 @@
  <%if (session.getAttribute("currentSessionUser")!=null) {%>
 <nav >
 <ul>
-	<li><a href="profile.jsp?user_login=<%=session.getAttribute("currentSessionUser")%>&">My profile</a></li>
+	<li><a href="profile.jsp?user_login=<%=session.getAttribute("currentSessionUser")%>">My profile</a></li>
 	<li><a href="expedition.jsp">My expeditions</a></li>
 	<li><a href="messages.jsp">Messages</a></li>
 	<li><a href="settings.jsp">Settings</a></li>
