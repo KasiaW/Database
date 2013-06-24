@@ -117,7 +117,7 @@ CREATE TABLE member_comment
 );
 
 --extra table ensuing after transformation of 'Wants_to(MEMBER(0,N):POINT(0,N), readiness)'; table represents plans of member
-CREATE TYPE readiness_type AS ENUM ('prepered','companions_need');
+CREATE TYPE readiness_type AS ENUM ('prepared','companions_need');
 CREATE TABLE plan
 (
  plan_id serial NOT NULL,

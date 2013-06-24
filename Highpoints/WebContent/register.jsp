@@ -3,7 +3,7 @@
 	
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -24,17 +24,17 @@
 
 				<TR height="25px">
 					<td width="235px"><b>Username*:</b></td>
-					<td width="215px"><input type="text" name="user" ></td>
+					<td width="215px"><input type="text" name="user" required></td>
 				</TR>
 
 				<TR height="25px">
 					<td width="235px"><b>Password*:</b></td>
-					<td width="215px"><input type="password" name="pass"></td>
+					<td width="215px"><input type="password" name="pass" required></td>
 				</TR>
 
 				<TR height="25px">
 					<TD width="235px"><b>Email*:</b></TD>
-					<TD width="215px"><input type="text" name="email"></TD>
+					<TD width="215px"><input type="text" name="email" required></TD>
 				</TR>
 
 				<TR height="25px">
