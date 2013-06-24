@@ -59,10 +59,19 @@
 				<TD><input type="submit" name="Submit1" value="REGISTER!"style="width: 450px; height: 25px">
 			</TR>
 			
+			
+			
+		
+			
 
-		</table></form></tr></td>
-
-	</TABLE>
+		</form>
+	
+		</table>
+		<TR><h1>         </h1></TR>
+	<tr><td>
+	<a href="index.jsp"><button style="width: 450px; height: 25px">RETURN TO THE LOGIN PAGE</button></a>
+	</td></tr>
+</TABLE>
 
 </body>
 </html>
