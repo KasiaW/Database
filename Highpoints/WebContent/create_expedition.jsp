@@ -8,12 +8,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="jquery-ui.min.css" />
+<script src="jquery-ui.js"></script>
 
 <title>New expedition</title>
 <%
  String a = request.getParameter("aim_id");
 %>
-
 
 </head>
 <body>
@@ -47,7 +48,7 @@
 <table>
 <tr>
 	<td>
-	Start<input type="date"  name="start" required placeholder="yyyy-mm-dd">
+	Start<input type="date"  name="start" required placeholder="yyyy-mm-dd" id="start">
 </td></tr>
 <tr><td>
 	End <input type="date"  name="end"required>
@@ -77,5 +78,6 @@ $('#<%=a%>').attr('checked', true);
 </div>
 </section>
 <%@ include file="menu.jsp"%>	
+
 </body>
 </html>

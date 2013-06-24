@@ -18,6 +18,7 @@
 <p>
 Where do you want to go?
 </p>
+<ul>
 	<%for (Point p :points){
 		List <String> loc = Core.getDB().getLocation(p.getId());
 		 String location = "";
@@ -28,9 +29,10 @@ Where do you want to go?
 		 }
 		 %>
 		 
-		 <input name="point" type="radio" id = "<%=p.getId()%>" value="<%=p.getId()%>" required><%=p.getName()%> <%=location %>
+		<li> <input name="point" type="radio" id = "<%=p.getId()%>" value="<%=p.getId()%>" required><%=p.getName()%> <%=location %></li>
 		
 	<%} %>
+</ul>
 <p>	
 Readiness	
 	<select name="readiness">

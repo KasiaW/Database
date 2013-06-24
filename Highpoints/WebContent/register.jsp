@@ -14,7 +14,14 @@
 
 <script>
 $(function() {
-$( "#date" ).datepicker();
+	var dateOpt = {
+			 dateFormat: 'yy-mm-dd',
+			 maxDate: 0 , 
+			 defaultDate: -365*25, 
+			 firstDay: 1 
+			 
+	 };
+$( "#date" ).datepicker(dateOpt);
 }); 
 
 </script>

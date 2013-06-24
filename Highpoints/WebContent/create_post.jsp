@@ -5,6 +5,7 @@
 <%@ page import="java.util.List"%>
 <%
 List <Expedition> l = Core.getDB().getExped("e.exped_login = '"+session.getAttribute("currentSessionUser")+"'");
+String exped = request.getParameter("exped_id");
 %>
 <!DOCTYPE html>
 <html>
@@ -38,6 +39,7 @@ Category
 <textarea name="content" cols="80" rows="10"></textarea>
 </p>
 <input type="hidden" name="login" value="<%=session.getAttribute("currentSessionUser") %>">
+<p id="war" style="color:red"></p>
 <button>Save</button>
 
 </form>
@@ -45,6 +47,16 @@ Category
 </section>
 
 <%@ include file="menu.jsp"%>
+
+<script>
+<%if (l.isEmpty()){%>
+$("#war").text("You have to first add some expedtions")
+<%}else{ if (exped!=null){%>
+$("#<%=exped%>").prop('checked', true);
+<%}else{%>
+$("#<%=l.get(0).getId()%>").prop('checked', true);
+<%}}%>
+</script>
 
 </body>
 </html>
