@@ -37,11 +37,15 @@ class Register {
 		Connection connection = DriverManager.getConnection(
 				"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
 				"Phie5pia");
+		
+	
 
 		Statement stmt = connection.createStatement();
 		ResultSet rs = stmt
 				.executeQuery("SELECT * FROM member WHERE login ='" + user
 						+ "'");
+		
+	
 		
 
 		String user1 = "";
@@ -49,9 +53,15 @@ class Register {
 
 		while (rs.next()) {
 			user1 = rs.getString("login");
+		}
 		
-			
-			
+		rs = stmt
+				.executeQuery("SELECT * FROM member WHERE mail ='" + mail
+						+ "'");
+		
+		
+		while (rs.next()) {
+			mail1= rs.getString("mail");
 		}
 
 		if (user1.length() == 0) { //It doesn't find any login with that mean -> IT IS AVAILABLE THE NAME
@@ -88,8 +98,7 @@ class Register {
 				"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
 				"Phie5pia");
 		
-
-	
+		
 		
 		Statement stmt = connection.createStatement();
 		if (www.length() != 0 && birthday.length() != 0 && description.length() != 0){
