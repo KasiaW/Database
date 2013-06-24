@@ -40,17 +40,21 @@ class Register {
 
 		Statement stmt = connection.createStatement();
 		ResultSet rs = stmt
-				.executeQuery("SELECT * FROM member WHERE login LIKE '" + user
+				.executeQuery("SELECT * FROM member WHERE login ='" + user
 						+ "'");
+		
 
 		String user1 = "";
 		String mail1 = "";
 
 		while (rs.next()) {
 			user1 = rs.getString("login");
+		
+			
+			
 		}
 
-		if (user1.length() == 0) {
+		if (user1.length() == 0) { //It doesn't find any login with that mean -> IT IS AVAILABLE THE NAME
 
 			user2 = true;
 		}
@@ -60,14 +64,8 @@ class Register {
 			user2 = false;
 		}
 
-		rs = stmt.executeQuery("SELECT * FROM member WHERE login = '" + mail
-				+ "'");
 
-		while (rs.next()) {
-			mail1 = rs.getString("mail");
-		}
-
-		if (mail1.length() == 0) {
+		if (mail1.length() == 0) { //Se non trova la mail -> AVAILABLE!
 
 			mailb = true;
 		}

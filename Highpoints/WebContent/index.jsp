@@ -23,13 +23,13 @@
 			<TR align="center">
 				
 					<TD align="center" bgcolor="#FFFFFF"><h4>
-							Username: <input type="text" name="un">
+							Username: <input type="text" name="un" required>
 						</h4></TD>
 			</TR>
 			<TR align="center">
 				<TD align="center" bgcolor="#FFFFFF">
 					<h4>
-						Password: <input type="password" name="pw">
+						Password: <input type="password" name="pw" required>
 
 					</h4>
 				</TD>

@@ -33,9 +33,6 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
-		/*PrintWriter writer = response.getWriter();
-		writer.println("test");
-		writer.close();*/
 		
 		try {
 			Class.forName("org.postgresql.Driver");
