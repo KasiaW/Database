@@ -35,9 +35,7 @@ public class CommentServlet extends HttpServlet  {
 		 */
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			 
-			/*PrintWriter writer = response.getWriter();
-			writer.println("test");
-			writer.close();*/
+
 			
 			try {
 				Class.forName("org.postgresql.Driver");
@@ -46,11 +44,14 @@ public class CommentServlet extends HttpServlet  {
 				e1.printStackTrace();
 			} 
 			
+			String author = "";
 			HttpSession session = request.getSession(true); 
+			if (session != null && session.getAttribute("currentSessionUser") != null)
+				author = (session.getAttribute("currentSessionUser")).toString();
 			
 			String content = request.getParameter("comment");
-			String author = (session.getAttribute("currentSessionUser")).toString();
 			String idPost = request.getParameter("idPost");
+			String url = request.getParameter("url");
 
 			try {
 			
@@ -60,9 +61,7 @@ public class CommentServlet extends HttpServlet  {
 				
 				
 				newComment.add();
-						 
-						 PrintWriter out = response.getWriter();
-							out.print("<html><head></head><body><h3>YOUR COMMENT WAS SUCCESSFULLY SUBMITTED!</h3></body></html>");
+				response.sendRedirect(url);
 							
 			} else{ 
 				

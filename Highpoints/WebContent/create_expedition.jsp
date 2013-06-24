@@ -8,8 +8,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<title>Insert title here</title>
+
+<title>New expedition</title>
 <%
  String a = request.getParameter("aim_id");
 %>
@@ -21,12 +21,14 @@
 
 
 <section>
+
 <h2>Add new expedition</h2>
+<div class="post">
 <form method="post" action="ExpeditionServlet">
-<table>
-<tr>
-	<td>Where were you?</td>
-	
+
+
+	<p>Where were you?</p>
+	<ul>
 	<%for (Point p :points){
 		List <String> loc = Core.getDB().getLocation(p.getId());
 		 String location = "";
@@ -36,13 +38,13 @@
 		 location+=")";
 		 }
 		 %>
-		 <tr><td>
+		 <li>
 		 <input name="point" type="radio" id = "<%=p.getId()%>" value="<%=p.getId()%>" required><%=p.getName()%> <%=location %>
-		 </td></tr>
+		 </li>
 	<%} %>
-		
+	</ul>	
 	
-
+<table>
 <tr>
 	<td>
 	Start<input type="date"  name="start" required placeholder="yyyy-mm-dd">
@@ -72,6 +74,7 @@ if (<%=a%> != null){
 $('#<%=a%>').attr('checked', true);
 }
 </script>
+</div>
 </section>
 <%@ include file="menu.jsp"%>	
 </body>

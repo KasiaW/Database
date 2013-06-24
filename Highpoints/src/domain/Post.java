@@ -8,12 +8,14 @@ public class Post {
 	private Date date;
 	private String category;
 	private String content;
+	private String author;
 	
-	public Post (int id, Date date, String category, String content){
+	public Post (int id, Date date, String category, String content, String author){
 		this.id = id;
 		this.date = date;
 		this.category = category;
 		this.content = content;
+		this.author = author;
 	}
 	
 	public int getId() {
@@ -39,6 +41,14 @@ public class Post {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	
 }

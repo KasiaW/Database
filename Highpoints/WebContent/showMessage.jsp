@@ -8,24 +8,10 @@
 <title>Settings</title>
 </head>
 <body>
-	<TABLE cellspacing="40">
-		<TR>
-			<td><%@ include file="menu.jsp"%></td>
-			<td>
-				<table>
-					<tr>
-						<td>
-							<h3>
-								At the moment you are logged as:
-								<%
-								out.print(session.getAttribute("currentSessionUser"));
-								
-							%>
-							</h3>
-						</td>
-					</tr>
-					<table>
-				
+<%@ include file="menu.jsp"%>
+<section>
+<h2>My mailbox</h2>	
+<div class="post">			
 					<table border="1">
 					
 					<tr>
@@ -102,10 +88,8 @@
 											
 							
 							</table>
-							</table>
-							</table>
-							
-			
-	</table>
+					</div>
+					<a href="messages.jsp"><button>All messages</button></a>
+					</section>
 </body>
 </html>

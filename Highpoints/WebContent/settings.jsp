@@ -8,23 +8,10 @@
 <title>Settings</title>
 </head>
 <body>
+<%@ include file="menu.jsp"%>
 <section>
-
-				<table>
-					<tr>
-						<td>
-							<h3>
-								At the moment you are logged as:
-								<%
-								out.print(session.getAttribute("currentSessionUser"));
-							%>
-							</h3>
-						</td>
-					</tr>
-					<tr>
-						<td>Those are the data stored in our systems about you</td>
-					</tr>
-					<tr>
+<h2>Settings</h2>
+<div class="post">			
 						<table border="1">
 							<tr>
 								<td>Username</td>
@@ -113,37 +100,25 @@
 						</tr>
 					
 						<tr>
-						<form action="updateInfo.jsp">
 						<td>
-							<input type="submit" name="Submit1" value="UPDATE/INSERT NEW VALUES" style="width:350px;height:25px;">
-						</td>
-						</form>
-						</tr>
 						
-						<tr>
-						<form action="changePassword.jsp">
+						<a href="updateInfo.jsp"><button>UPDATE/INSERT NEW VALUES</button></a>
+						
+						</tr>						
+						<tr>						
 						<td>
-							<input type="submit" name="Submit2" value="CHANGE THE PASSWORD" style="width:350px;height:25px;">
+						<a href="changePassword.jsp"><button>CHANGE THE PASSWORD</button></a>						
 						</td>
-						
-						</form>
-						
 						</tr>
+					
 						
-						<tr>
-						<form action="delete.jsp">
-						<td>
-							<input type="submit" name="Submit3" value="DELETE YOUR ACCOUNT" style="width:350px;height:25px;">
-						</td>
-						</form>
-						</tr>
+					
 						
 						
 						</table>
-						
-				</table>
-
-	</section>
-	<%@ include file="menu.jsp"%>
+			
+</div>
+</section>
+	
 </body>
 </html>

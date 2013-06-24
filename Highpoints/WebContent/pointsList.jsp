@@ -13,7 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="My.css">
-<title>PeakList</title>
+<title>Home</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 
 <section>	
 
-Points list <br><br>
+<h2>Points list</h2>
 <table border="1">
 <tr>
 <th>COUNTRY</th>

@@ -1,12 +1,14 @@
 package engine;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,6 +24,7 @@ public class DB {
 	public DB(){
 		try {
 		
+			Class.forName("org.postgresql.Driver");
 			connection = DriverManager.getConnection(
 					"jdbc:postgresql://10.7.20.170:5432/postgres", "ds_group3",
 					"Phie5pia");
@@ -29,6 +32,9 @@ public class DB {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("can not connect");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -103,7 +109,7 @@ public class DB {
 		    	    	if ((x = rs.getString("routes"))!= null) p.setRoutes(x);
 		    	    	if ((x = rs.getString("point_access"))!= null) p.setPointAccess(x);
 		    	    	if ((x = rs.getString("elevation"))!= null) p.setElevation(Double.parseDouble(x));
-		    	    	//p.setElevation(rs.getDouble("elevation"));
+		    	    	
 
 		  	    }
 		rs.close();
@@ -320,7 +326,7 @@ public class DB {
 		
 		try {
 			stmt = connection.createStatement();
-		    ResultSet rs = stmt.executeQuery("SELECT post.post_id, post.post_date, post.category, post.post_content "+
+		    ResultSet rs = stmt.executeQuery("SELECT post.post_id, post.post_date, post.category, post.post_content, expedition.exped_login "+
 			"FROM public.expedition, public.post, public.member_experience "+
             where+";"); 
  
@@ -329,7 +335,7 @@ public class DB {
 		   while ( rs.next() ) {
 			    	  Post p = new Post(
 			    			  rs.getInt("post_id"), rs.getDate("post_date"), rs.getString("category"),
-			    			  rs.getString("post_content")); 	
+			    			  rs.getString("post_content"), rs.getString("exped_login")); 	
 			    	  l.add(p);
 		  	    }
 		   rs.close();
@@ -453,5 +459,33 @@ public void insertComment(int id, String author, String content){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void updateUser(String user, String mail, String www, String date, String description){
+		Statement stmt;
+		try {
+			stmt = connection.createStatement();
+			String attr = "mail='"+mail+
+					"', www='"+www+"', description='"+description+"'";
+			
+			if (date != null){
+				java.util.Date date1;
+			try {
+				date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+				attr+= ", birthday='"+date1+"' ";
+				
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			}
+			stmt.executeUpdate("UPDATE member SET "+attr+" WHERE login='"+user+"';");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }

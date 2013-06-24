@@ -23,39 +23,38 @@
 <section><h2><%=type %>s</h2>
 <%for (Post post: posts) {%>
 <div class="post">
+
+<div>Author: <strong><%=post.getAuthor() %></strong></div>
 <%=post.getContent() %>
 <% 	
 	String id = Integer.toString(post.getId()); 
 	List <Comment> comment = Core.getDB().getComment(id);
 %>
-
 <p></p>
-<details>
-<summary>Comments</summary>
+
+<details style="position:relative; left:20px;">
+<summary style="position:relative; left:-20px;">Comments (<%=comment.size() %>)</summary>
 
 <!-- COMMENTS -->
-
-<table border = "1">
-	<tr>
-		<td width = "50px"><b>Date</b></td>
-		<td width = "100px"><b>Author</b></td>
-		<td width = "350px"><b>Content</b></td>
-	</tr>
 	<% for(Comment comments: comment){ %>
-	<tr>
-		<td><% out.print(comments.getDate()); %></td>
-		<td><% out.print(comments.getAuthor()); %></td>
-		<td><% out.print(comments.getContent()); %></td>
-	</tr>
+	<p>
+	<strong><%=comments.getAuthor()%></strong>, date: <%=comments.getDate() %>
+	<br><%=comments.getContent()%>
+	</p>
+
 	<%} %>
-	<tr height="25px">
-		<form action="CommentServlet">
-			<td width="215px"><input type="text" name="comment" ></td>
+	
+		<form action="CommentServlet" onsubmit="return validateForm('a<%=post.getId()%>','w<%=post.getId()%>' )" class="new_com">
+		<strong>Your comment:</strong><br>
+			<textarea name="comment" id="a<%=post.getId()%>" rows="3" cols="50"></textarea>
 			<input type= "hidden" name="idPost" value="<%=post.getId()%>">
-			<td> <input type="submit" name="SubmitComment" value="Submit Comment" style="width:150px;height:25px;"> </td>
+			<input type= "hidden" name="url" value="posts.jsp?point_id=<%=Integer.toString(p) %>&type=<%=type %>&">
+			<p id="w<%=post.getId()%>" style="color:red"></p>
+			<button>Add comment</button>
+		
 		</form>
-	</tr>
-</table>
+	
+
 
 </details>
 </div>
@@ -65,4 +64,20 @@
 <%@ include file="menu.jsp"%>	
 
 </body>
+
+<script>
+//check if comment is longer than 3 char
+function validateForm(area, war){
+	if ($("#"+area).val().length < 3){
+	 $("#"+war).text("Comment must contain more than 3 characters!");
+	 return false;
+	}
+}
+
+//only members can add comments
+<%if (session.getAttribute("currentSessionUser")==null){%>
+$(".new_com").prop("hidden",true);
+<%}%>
+
+</script>
 </html>

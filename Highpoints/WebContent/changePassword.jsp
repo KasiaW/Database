@@ -8,64 +8,33 @@
 <title>Settings</title>
 </head>
 <body>
-	<TABLE>
-		<TR>
-			<td><%@ include file="menu.jsp"%></td>
-			<td>
-				<table >
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-				<tr></tr>
-					<tr>
-						<td>
-							<h3>
-								At the moment you are logged as:
-								<%
-								out.print(session.getAttribute("currentSessionUser"));
-							%>
-							</h3>
-						</td>
-					</tr>
-				
-					<tr>
+<%@ include file="menu.jsp"%>
+<section>
+<h2>Change your password</h2>	
+			
 					<form action="PasswordServlet">
 						<table border="1">
 							<tr>
 								<td> <b>Inser your current password:</b></td>
 								<td>
-									<input type="password" name="de">
+									<input type="password" name="de" required>
 								</td>
-							</tr> <tr></tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
-							<tr></tr>
+							</tr> 
 							<tr>
 							<td> Inser your new password:</td>
 								<td>
-									<input type="password" name="new">
+									<input type="password" name="new" required>
 								</td></tr>
 							
 							<tr><td> Confirm your new password: </td>
 								<td>
-									<input type="password" name="new1">
+									<input type="password" name="new1" required>
 								</td></tr>
-							<tr>
-							
-							<table>
-							
-						
-							<input type="submit"  value="CHANGE YOUR PASSWORD" style="width:360px;height:170px"> 
-							
-							</tr>
-							<form action="PasswordServlet">
-							</table>
+							<tr></tr></table>
+							<button>CHANGE</button>
 
-	
-	</table>
+			</form>
+
+</section>
 </body>
 </html>

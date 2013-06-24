@@ -8,29 +8,13 @@
 <title>Settings</title>
 </head>
 <body>
-	<TABLE cellspacing="30">
-		<TR>
-			<td><%@ include file="menu.jsp"%></td>
-			<td>
-				<table width="500">
+<%@ include file="menu.jsp"%>
+<section>
+	<h2>Update/insert information about you</h2>
+				<form action="UpdateInfoServlet">
+				<table >
 					<tr>
-						<td>
-							<h3>
-								At the moment you are logged as:
-								<%
-								out.print(session.getAttribute("currentSessionUser"));
-							%>
-							</h3>
-						</td>
-					</tr>
-					<tr>
-						<td><b>UPDATE/INSERT INFORMATION ABOUT YOU</b></td>
-					</tr>
-					<tr>
-						<form action="UpdateInfoServlet">
-						<table border="1">
-							<tr>
-								<td> <b>Username</b></td>
+						<td> <b>Username</b></td>
 								<td>
 									<%
 										out.print(session.getAttribute("currentSessionUser"));
@@ -115,19 +99,13 @@
 							</tr>
 						
 						</table>
-						<tr><td></td>
-						<td>
-							<input type="submit" name="Submit1" value="SAVE CHANGES" style="width:350px;height:50px;">
-						</td>
+					<button>Save changes</button>
 						
-						</tr>
 						
-				</table>
+						
+				
 				</form>
-		</tr>
-
-
-		</td>
-	</table>
+	
+</section>	
 </body>
 </html>

@@ -13,7 +13,7 @@ nav {
 	font-weight: bold;
 	text-align: center;
 	width: 10em;
-/* 	background-color:#200000; */
+	margin:15px;
 
 }
 
@@ -99,9 +99,25 @@ background-color:#7A991A;
 
 table{
 	border-collapse: collapse;
+	margin-bottom:20px;
 }
 
-td{
-	padding: 10px;
+td, th{
 	border-bottom: 1px solid #200000;
+	padding:5px;
 }
+
+button{
+	background-color:#200000;
+	color:white;
+	border-color:black;
+	border-radius:5px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+h2{
+	text-transform:capitalize;
+}
+
+

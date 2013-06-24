@@ -14,19 +14,16 @@
 <body>
 <section>
 <%
-Class.forName("org.postgresql.Driver"); 
+
 String login = request.getParameter("user_login");
 Member m = Core.getDB().getMember(login); 
 List <Expedition> list = Core.getDB().getSucExped(login);
 %>
 
 <h2><%=login %></h2>
-						
+<div class="post">						
 					
 					<table>
-					<tr>
-					
-					<td></td></tr>
 					<tr><td><b>Mail</b></td>
 					<td><%out.print(m.getMail()); %></td>
 					<tr><td><b>WWW</b></td>
@@ -38,11 +35,9 @@ List <Expedition> list = Core.getDB().getSucExped(login);
 					<tr><td><b>Description</b></td>
 					<td><%out.print(m.getDescription()); %></td></tr>
 					</table>
-					<h1>  </h1>
-					<h1>  </h1>
-					<h1>  </h1>
 					
-					<tr><td><b>SUCCEDED EXPEDTION</b></tr>
+					
+					<b>SUCCEDED EXPEDTION</b>
 					<table border="1">
 					<tr><td><b>Time</b></td><td><b>Reached Point</b></td></tr>
 					<tr>
@@ -61,11 +56,11 @@ List <Expedition> list = Core.getDB().getSucExped(login);
 				</table>
 					
 					
-					
+</div>					
 					
 					
 				
-</table>
+
 </section>
 <%@ include file="menu.jsp"%>					
 </body>

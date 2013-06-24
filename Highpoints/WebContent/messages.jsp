@@ -8,9 +8,10 @@
 <title>Messages</title>
 </head>
 <body>
+<%@ include file="menu.jsp"%>	
 <section>
 <h2>My mailbox</h2>
-		
+<div class="post">		
 						<b>RECEIVED MESSAGES</b>
 						<table border="1">
 
@@ -127,16 +128,13 @@
 								<%
 									}
 								%>
-								</td>
-								</tr>
-							</table></table></table></table>
+								
+							</table>
 <p></p>
-							<form action="newMessage.jsp">
-							<input type="submit" value="SEND A NEW MESSAGE!"
-									style="width: 250px; height: 20px">
-							</form>
-
-</section>
-<%@ include file="menu.jsp"%>					
+							
+							<a href="newMessage.jsp"><button>SEND A NEW MESSAGE!</button></a>
+							
+</div>
+</section>				
 </body>
 </html>

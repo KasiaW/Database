@@ -7,20 +7,21 @@
 <body background="prova.jpg" bgcolor="#FFFFFF">
 
 	<TABLE align="center" cellspacing="5" cellpadding="5">
-		<TR align="center"">
+		<TR align="center">
 		<TD align="center" >
 			<h2>Welcome to our site EUROPE'S
 					HIGHPOINTS!!!!</h2></TD>
 		</TR>
 		<TR align="center">
-		<TD align="center ">
+		<TD align="center" >
 			 <h3>In order to enter to the site please
 					log in!</h3></TD>
 		</TR>
 
+<form action="LoginServlet">
 		<table border="1" align="center" bgcolor="#FFFFFF">
 			<TR align="center">
-				<form action="LoginServlet">
+				
 					<TD align="center" bgcolor="#FFFFFF"><h4>
 							Username: <input type="text" name="un">
 						</h4></TD>
@@ -36,10 +37,8 @@
 						type="submit" value="Enter"></font></td>
 			</tr>
 
-			</form>
-
 		</table>
-		
+</form>
 		
 	
 	

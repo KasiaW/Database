@@ -14,10 +14,11 @@ List <Expedition> l = Core.getDB().getExped("e.exped_login = '"+session.getAttri
 </head>
 <body>
 <section>
-
+<h2>Create new post</h2>
+<div class="post">
 <form method="post" action="PostServlet">
-<table>
-<tr><td>
+
+<p>Choose expedition</p>
 <ul>
 <%for (Expedition e: l){ %>
 	
@@ -26,26 +27,23 @@ List <Expedition> l = Core.getDB().getExped("e.exped_login = '"+session.getAttri
 	
 
 <%} %>
-</ul></td></tr>
+</ul>
 
-<tr><td>Category
+Category
 		<select name="category">
 		<option value="tip">tip</option>
 		<option value="report">report</option>
 		</select>
+<p>
+<textarea name="content" cols="80" rows="10"></textarea>
+</p>
+<input type="hidden" name="login" value="<%=session.getAttribute("currentSessionUser") %>">
+<button>Save</button>
 
-</td></tr>
-<tr>
-	<td><textarea name="content"></textarea></td>
-</tr>
-
-<tr><td>
-<input type="hidden" name="login" value="<%=session.getAttribute("currentSessionUser") %>"></td></tr>
-<tr><td><input type="submit" value="Submit"></td></tr>
-</table>
 </form>
-
+</div>
 </section>
+
 <%@ include file="menu.jsp"%>
 
 </body>

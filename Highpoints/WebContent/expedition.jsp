@@ -10,15 +10,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<title>Insert title here</title>
+<title>Expeditions</title>
 </head>
 <body>
 
 <%@ include file="menu.jsp"%>
 <section>
-<h2>My Expeditions</h2>
-
-
+<h2>My Expeditions 
+<a href="create_expedition.jsp"><button>Add new</button></a>
+<a href="create_plan.jsp"><button>Add new plan</button></a>
+</h2>
+<div class="post">
 <p>You achieved: </p>
 <table border=1>
 <tr><td>POINT</td>
@@ -33,7 +35,8 @@
    </tr>
    <%} %>
 </table>
-
+</div>
+<div class="post">
 <p>You tried without success: </p>
 <table border=1>
 <tr><td>POINT</td>
@@ -51,8 +54,9 @@
 
 
 <p></p>
-<a href="create_expedition.jsp"><button>Add new</button></a>
 
+</div>
+<div class="post">
 <p>Your plans</p>
 <table border=1>
 <tr><td>POINT</td>
@@ -70,8 +74,8 @@
    <%} %>
 </table>
 <p></p>
-<a href="create_plan.jsp"><button>Add new plan</button></a>
 
+</div>
 </section>
 
 </body>
