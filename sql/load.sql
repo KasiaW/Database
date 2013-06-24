@@ -3,7 +3,7 @@
 INSERT INTO state(state_name)
 VALUES ('Albania'),('Andorra'),('France'),('Russia'),('Turkey'),('Macedonia'),('Italy'), ('Austria'),('Belarus'),('Belgium'),('Bosnia and Herzegovina'),('Bulgaria'),('Croatia'), ('Cyprus'),('Czech Republic'),('Denmark'), ('Estonia'), ('Finland'),('Germany'), ('Greece'), ('Hungary'), ('Iceland'), ('Ireland'), ('Latvia'), ('Liechtenstein'), ('Lithuania'),
  ('Luxembourg'), ('Malta'), ('Moldavia'), ('Monaco'), ('Montenegro'), ('Netherlands'),
- ('Norway'), ('Portugal'), ('Romania'), ('San Marino'), ('Serbia'), ('Slovakia'), ('Slovenia'), ('Spain'),
+ ('Norway'), ('Portugal'),('Poland') ,('Romania'), ('San Marino'), ('Serbia'), ('Slovakia'), ('Slovenia'), ('Spain'),
  ('Sweden'), ('Switzerland'), ('Ukraine'), ('United Kingdom'), ('Vatican City');
 
 
@@ -86,10 +86,10 @@ VALUES
 ('Musala', 2925 );
 
 INSERT INTO proper_point(p_state_id, p_point_id)
-VALUES (2,1), (3,2), (4,5),(5,3),(6,6), (9,9),(11,10),(13,11);
+VALUES (2,1), (3,2), (4,5),(35,3),(5,6), (8,9),(11,10),(12,11), (1,8),(6,8);
 
 INSERT INTO alternative_point (a_state_id, a_point_id)
-VALUES (3,4), (6,7);
+VALUES (4,4),  (7,2), (5,7);
 
 INSERT INTO member (login, member_password, mail, birthday)
 VALUES ('kiki','dh2193jsj','kiwppl', '1988-07-04'),
@@ -125,9 +125,9 @@ VALUES (1,'ueni');
 
 
 INSERT INTO plan(plan_login, plan_point, readiness)
-VALUES ('kiki',3,'prepered'),
+VALUES ('kiki',3,'prepared'),
 ('kiki',5, 'companions_need'),
-('ueni',1, 'prepered'),
+('ueni',1, 'prepared'),
 ('lucy',6,NULL);
 
 
