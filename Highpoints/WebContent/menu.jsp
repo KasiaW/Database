@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="My.css">
-<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script src="jquery-1.9.1.min.js"></script>
 
 </head>
 <body>
