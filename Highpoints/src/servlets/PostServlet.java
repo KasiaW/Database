@@ -40,6 +40,7 @@ public class PostServlet extends HttpServlet {
 		String category = request.getParameter("category");
 		Date date = new Date(Calendar.getInstance().getTimeInMillis());
 		Core.getDB().insertPost(points, content, login, date, category);
+		response.sendRedirect("pointsList.jsp");
 		
 	}
 
