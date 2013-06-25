@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>New plan</title>
+<%String pointId = request.getParameter("point"); %>
 </head>
 <body>
 <section>
@@ -51,6 +52,8 @@ Notes
 </form>
 </div></section>
 <%@ include file="menu.jsp"%>
-
+<script>
+$("#<%=pointId%>").prop('checked', true);
+</script>
 </body>
 </html>

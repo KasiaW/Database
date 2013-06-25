@@ -53,13 +53,9 @@ public class RegisterServlet extends HttpServlet {
 		 
 		if ((((((newUser.isValid() && user.length()>=0) && password.length()!=0) && email.length()!=0 )) && (date.length()==0 || date.charAt(4)=='-'))){		 
 			
-			HttpSession session = request.getSession(true); 
+			
 			newUser.add();
-					 
-					 PrintWriter out = response.getWriter();
-						out.print("<html><head></head><body><h3>YOU SUCCESFULLY REGISTERED TO OUR PORTAL!</h3>");
-						out.print("Now you can log in to the site in this page </body></html>");
-						out.print("<a href=index.jsp> LOGIN PAGE</a>"); 
+			response.sendRedirect("index.jsp");
 						
 		}
 					

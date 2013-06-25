@@ -78,6 +78,8 @@ $('#<%=a%>').attr('checked', true);
 </div>
 </section>
 <%@ include file="menu.jsp"%>	
-
+<script>
+$("#<%=a%>").prop('checked', true);
+</script>
 </body>
 </html>

@@ -62,14 +62,14 @@
 <tr><td>POINT</td>
 	<td>READINESS</td>
 	<td>NOTES</td>
-	<td>EDIT</td>
+	
 </tr>
 <% List <Plan> l3 = Core.getDB().getPlan("plan.plan_login='"+session.getAttribute("currentSessionUser")+"'");
    for (Plan pl: l3){%>
    <tr><td><a href="point.jsp?point_id=<%=pl.getPoint()%>&" ><%=Core.getDB().getPoint(pl.getPoint()).getName()%></a></td>
    	   <td><%=pl.getReadiness() %></td>
    	   <td><%=pl.getDescription() %></td>
-   	   <td><a href="create_plan.jsp?plan_id=<%=pl.getId()%>&" ><button>edit</button></a></td>
+   	   
    </tr>
    <%} %>
 </table>

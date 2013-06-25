@@ -89,7 +89,7 @@
 	<%} %>
 </table>							
 <a href="create_expedition.jsp?aim_id=<%=p.getId()%>"><button>I was there!</button></a>
-<button>I wanna climb there!</button>
+<a href="create_plan.jsp?point=<%=a%>"><button>I wanna climb there!</button></a>
 </div>
 </section>
 <%@ include file="menu.jsp"%>	
